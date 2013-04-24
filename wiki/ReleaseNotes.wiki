@@ -5,13 +5,21 @@ Release notes:
 This is the first, experimental version.
 
 It supports:
+
 - Java and Scala sources compilation,
+
 - Coffee, JS and Less assets compilation,
+
 - runnig tests with Maven Surefire Plugin,
+
 - packaging using Maven Jar Plugin,
+
 - "dist" and "dist-exploded" packaging (a'la Play2 "dist" task),
+
 - "run", "start" and "stop" commands for running Play! server, but without hot reloading yet
 
 It does not support:
+
 - hot reloading when running server
+
 - war packaging ([https://github.com/dlecan/play2-war-plugin Play2 War plugin] integration?)
