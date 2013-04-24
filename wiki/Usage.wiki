@@ -198,7 +198,7 @@ More features:
                 <extensions>true</extensions>
                 <configuration>
                     <!-- only if using database evolutions -->
-                <serverJvmArgs>-DapplyEvolutions.default=true</serverJvmArgs>
+                    <serverJvmArgs>-DapplyEvolutions.default=true</serverJvmArgs>
                 </configuration>
                 <executions>
                     <!-- only if there are assets in the project -->
