@@ -75,7 +75,7 @@ Simplest project (pom.xml file) should look like:
 </project>
 }}}
 
-More features:
+Example with optional dependencies and configuration options:
 
 {{{
 <project xmlns="http://maven.apache.org/POM/4.0.0"
