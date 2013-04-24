@@ -47,12 +47,132 @@ Simplest project (pom.xml file) should look like:
             <artifactId>play_${play2-scala.version}</artifactId>
             <version>${play2.version}</version>
         </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>${basedir}/app</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>${basedir}/conf</directory>
+            </resource>
+            <resource>
+                <directory>${basedir}</directory>
+                <includes>
+                    <include>public/**</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>com.google.code.play2-maven-plugin</groupId>
+                <artifactId>play2-maven-plugin</artifactId>
+                <version>1.0.0-alpha1</version>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+}}}
+
+More features:
+
+{{{
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>test</groupId>
+    <artifactId>test</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>play2</packaging>
+
+    <name>Play! Framework 2.x Maven Test Project</name>
+
+    <repositories>
+        <repository>
+            <id>typesafe</id>
+            <name>Typesafe - releases</name>
+            <url>http://repo.typesafe.com/typesafe/releases/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <play2.plugin.version>1.0.0-alpha1</play2.plugin.version>
+        <play2.version>2.1.0</play2.version>
+        <play2-scala.version>2.10</play2-scala.version>
+        <scala.version>2.10.0</scala.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-compiler</artifactId>
+            <version>${scala.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>play</groupId>
+            <artifactId>play_${play2-scala.version}</artifactId>
+            <version>${play2.version}</version>
+        </dependency>
+
+        <!-- if using Anorm -->
+        <dependency>
+            <groupId>play</groupId>
+            <artifactId>anorm_${play2-scala.version}</artifactId>
+            <version>${play2.version}</version>
+        </dependency>
+
+        <!-- if using JDBC -->
+        <dependency>
+            <groupId>play</groupId>
+            <artifactId>play-jdbc_${play2-scala.version}</artifactId>
+            <version>${play2.version}</version>
+        </dependency>
 
         <!-- if using Java -->
         <dependency>
             <groupId>play</groupId>
             <artifactId>play-java_${play2-scala.version}</artifactId>
             <version>${play2.version}</version>
+        </dependency>
+
+        <!-- if using Ebean -->
+        <dependency>
+            <groupId>play</groupId>
+            <artifactId>play-java-ebean_${play2-scala.version}</artifactId>
+            <version>${play2.version}</version>
+        </dependency>
+
+        <!-- if using JPA -->
+        <dependency>
+            <groupId>play</groupId>
+            <artifactId>play-java-jpa_${play2-scala.version}</artifactId>
+            <version>${play2.version}</version>
+        </dependency>
+
+        <!-- if using JPA -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>3.6.9.Final</version>
+        </dependency>
+
+        <!-- when there are tests in the project -->
+        <dependency>
+            <groupId>play</groupId>
+            <artifactId>play-test_${play2-scala.version}</artifactId>
+            <version>${play2.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
