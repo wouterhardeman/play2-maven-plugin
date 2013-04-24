@@ -1,10 +1,14 @@
 * Why I wrote this plugin?
 
+1.
+
 I know, the is already [https://github.com/nanoko-project/maven-play2-plugin one plugin], but this is only a simple SBT wrapper.
 
 Can you use different Maven plugins like FindBugs, PMD, Cobertura with it? I don't think so.
 
 Can you generate [https://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-alpha1/reporting/full/ project]'s site like [https://play2-maven-plugin.googlecode.com/svn/mavensite/test-projects/reporting/full/java/computer-database-jpa/1.0.0-alpha1/index.html this] with [https://play2-maven-plugin.googlecode.com/svn/mavensite/test-projects/reporting/full/java/computer-database-jpa/1.0.0-alpha1/xref/index.html source Xref], [https://play2-maven-plugin.googlecode.com/svn/mavensite/test-projects/reporting/full/java/computer-database-jpa/1.0.0-alpha1/apidocs/index.html JavaDoc], [https://play2-maven-plugin.googlecode.com/svn/mavensite/test-projects/reporting/full/java/computer-database-jpa/1.0.0-alpha1/findbugs.html FindBugs], [https://play2-maven-plugin.googlecode.com/svn/mavensite/test-projects/reporting/full/java/computer-database-jpa/1.0.0-alpha1/pmd.html PMD], [https://play2-maven-plugin.googlecode.com/svn/mavensite/test-projects/reporting/full/java/computer-database-jpa/1.0.0-alpha1/cobertura/index.html Cobertura], [https://play2-maven-plugin.googlecode.com/svn/mavensite/test-projects/reporting/full/java/computer-database-jpa/1.0.0-alpha1/surefire-report.html Surefire] and other reports? I don't think so either.
+
+2.
 
 Additionally, I see Play! users have many problems with SBT multimodule builds. I think, this should be a lot easier with Maven.
 
@@ -12,4 +16,4 @@ Additionally, I see Play! users have many problems with SBT multimodule builds. 
 
 <font color="red"><strong>If there will be interest, I will keep on developing this plugin</strong></font>. Only this will give me enough power to spend more time working on it.
 
-Based on my experience with [http://code.google.com/p/maven-play-plugin/ Play! 1.x Maven plugin] I know that there are many features that can be added to make this plugin even more functional than the original Play! SBT Plugin :)
+Based on my experience with [http://code.google.com/p/maven-play-plugin/ Play! 1.x Maven plugin] I know that there are many features that can be added to make this plugin at least as functional as the original Play! SBT Plugin.
