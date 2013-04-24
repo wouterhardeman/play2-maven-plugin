@@ -33,3 +33,7 @@ Then I found [https://github.com/typesafehub/zinc Zinc Compiler]. It's a stand-a
 Based on my experience with [http://code.google.com/p/maven-play-plugin/ Play! 1.x Maven plugin] I know that there are many features that can be added to make this plugin at least as functional as the original Play! SBT Plugin.
 
 What I need is user feedback with as many as possible sample projects showing bugs or possibility of new features.
+
+Feel free to create issues. Maybe it will make sense to create a discussion group.
+
+I say it once more, the plugin's future depends on its users.
