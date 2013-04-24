@@ -11,3 +11,5 @@ Additionally, I see Play! users have many problems with SBT multimodule builds. 
 * The future
 
 <font color="red"><strong>If there will be interest, I will keep on developing this plugin</strong></font>. Only this will give me enough power to spend more time working on it.
+
+Based on my experience with [http://code.google.com/p/maven-play-plugin/ Play! 1.x Maven plugin] I know that there are many features that can be added to make this plugin even more functional than the original Play! SBT Plugin :)
