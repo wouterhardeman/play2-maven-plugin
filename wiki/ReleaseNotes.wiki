@@ -20,6 +20,8 @@ It supports:
 
 It does not support:
 
-- hot reloading when running server
+- multimodule builds (with modularized routes for example),
+
+- hot reloading when running server,
 
 - war packaging ([https://github.com/dlecan/play2-war-plugin Play2 War plugin] integration?)
