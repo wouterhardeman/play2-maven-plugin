@@ -1,4 +1,4 @@
-Why I wrote this plugin?
+* Why I wrote this plugin?
 
 I know, the is already [https://github.com/nanoko-project/maven-play2-plugin one plugin], but this is only a simple SBT wrapper.
 
@@ -8,5 +8,6 @@ Can you generate [https://play2-maven-plugin.googlecode.com/svn/tags/test-projec
 
 Additionally, I see Play! users have many problems with SBT multimodule builds. I think, this should be a lot easier with Maven.
 
+* The future
 
-If there will be interest, I will develop this plugin. Only this will give me enough power to spend more time working on it.
+<font color="red"><strong>If there will be interest, I will keep on developing this plugin</strong></font>. Only this will give me enough power to spend more time working on it.
