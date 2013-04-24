@@ -1,0 +1,7 @@
+Why I wrote this plugin?
+
+I know, the is already [https://github.com/nanoko-project/maven-play2-plugin one plugin], but this is only a simple SBT wrapper.
+
+Can you use different Maven plugins like FindBugs, PMD, Cobertura with it? I don't think so.
+
+Can you generate project's site like [https://play2-maven-plugin.googlecode.com/svn/mavensite/test-projects/reporting/full/java/computer-database-jpa/1.0.0-alpha1/index.html this] with [https://play2-maven-plugin.googlecode.com/svn/mavensite/test-projects/reporting/full/java/computer-database-jpa/1.0.0-alpha1/xref/index.html source Xref], [https://play2-maven-plugin.googlecode.com/svn/mavensite/test-projects/reporting/full/java/computer-database-jpa/1.0.0-alpha1/apidocs/index.html JavaDoc], [https://play2-maven-plugin.googlecode.com/svn/mavensite/test-projects/reporting/full/java/computer-database-jpa/1.0.0-alpha1/findbugs.html FindBugs], [https://play2-maven-plugin.googlecode.com/svn/mavensite/test-projects/reporting/full/java/computer-database-jpa/1.0.0-alpha1/pmd.html PMD], [https://play2-maven-plugin.googlecode.com/svn/mavensite/test-projects/reporting/full/java/computer-database-jpa/1.0.0-alpha1/cobertura/index.html Cobertura], [https://play2-maven-plugin.googlecode.com/svn/mavensite/test-projects/reporting/full/java/computer-database-jpa/1.0.0-alpha1/surefire-report.html Surefire] and other reports?
