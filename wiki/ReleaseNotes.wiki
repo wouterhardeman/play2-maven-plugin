@@ -6,17 +6,17 @@ This is the first, experimental version.
 
 It supports:
 
-- Java and Scala sources compilation,
+- *Java* and *Scala* sources compilation,
 
-- Coffee, JS and Less assets compilation,
+- *Coffee*, *JS* and *Less* assets compilation,
 
-- runnig tests with Maven Surefire Plugin,
+- *runnig tests* with Maven Surefire Plugin,
 
-- packaging using Maven Jar Plugin,
+- *packaging* using Maven Jar Plugin,
 
-- "dist" and "dist-exploded" packaging (a'la Play2 "dist" task),
+- "*dist*" and "*dist-exploded*" packaging (a'la Play2 "dist" task),
 
-- "run", "start" and "stop" commands for running Play! server, but without hot reloading yet
+- "*run*", "*start*" and "*stop*" commands for running Play! server, but without hot reloading yet
 
 It does not support:
 
