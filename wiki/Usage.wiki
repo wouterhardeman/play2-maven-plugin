@@ -125,49 +125,49 @@ More features:
             <version>${play2.version}</version>
         </dependency>
 
-        <!-- if using Anorm -->
+        <!-- only if using Anorm -->
         <dependency>
             <groupId>play</groupId>
             <artifactId>anorm_${play2-scala.version}</artifactId>
             <version>${play2.version}</version>
         </dependency>
 
-        <!-- if using JDBC -->
+        <!-- only if using JDBC -->
         <dependency>
             <groupId>play</groupId>
             <artifactId>play-jdbc_${play2-scala.version}</artifactId>
             <version>${play2.version}</version>
         </dependency>
 
-        <!-- if using Java -->
+        <!-- only if using Java -->
         <dependency>
             <groupId>play</groupId>
             <artifactId>play-java_${play2-scala.version}</artifactId>
             <version>${play2.version}</version>
         </dependency>
 
-        <!-- if using Ebean -->
+        <!-- only if using Ebean -->
         <dependency>
             <groupId>play</groupId>
             <artifactId>play-java-ebean_${play2-scala.version}</artifactId>
             <version>${play2.version}</version>
         </dependency>
 
-        <!-- if using JPA -->
+        <!-- only if using JPA -->
         <dependency>
             <groupId>play</groupId>
             <artifactId>play-java-jpa_${play2-scala.version}</artifactId>
             <version>${play2.version}</version>
         </dependency>
 
-        <!-- if using JPA -->
+        <!-- only if using JPA -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
             <version>3.6.9.Final</version>
         </dependency>
 
-        <!-- when there are tests in the project -->
+        <!-- only if there are tests in the project -->
         <dependency>
             <groupId>play</groupId>
             <artifactId>play-test_${play2-scala.version}</artifactId>
@@ -196,6 +196,28 @@ More features:
                 <artifactId>play2-maven-plugin</artifactId>
                 <version>1.0.0-alpha1</version>
                 <extensions>true</extensions>
+                <configuration>
+                    <!-- only if using database evolutions -->
+                <serverJvmArgs>-DapplyEvolutions.default=true</serverJvmArgs>
+                </configuration>
+                <executions>
+                    <!-- only if there are assets in the project -->
+                    <execution>
+                        <id>default-play2-compile-assets</id>
+                        <goals>
+                            <goal>closure-compile</goal> <!-- only if precompiling js assets -->
+                            <goal>coffee-compile</goal> <!-- only if precompiling coffee assets -->
+                            <goal>less-compile</goal> <!-- only if precompiling less assets -->
+                        </goals>
+                    </execution>
+                    <!-- only if using Ebean -->
+                    <execution>
+                        <id>default-play2-ebean-enhance</id>
+                        <goals>
+                            <goal>ebean-enhance</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
