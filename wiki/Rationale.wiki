@@ -12,8 +12,18 @@ Can you generate [https://play2-maven-plugin.googlecode.com/svn/tags/test-projec
 
 Additionally, I see Play! users have many problems with SBT multimodule builds. I think, this should be a lot easier with Maven.
 
+* ...
+
+I tried to write this plugin for Play! 2.0.x versions but found it impossible (or hard to achieve) to use some parts of Play! (assets compilers for example) without depending on Play! SBT Plugin (which wasn't even deployed as Maven artifact).
+
+With the modularization introduced in Play! 2.1.x line it was possible to use some Play! code, for example routes and templates compilers.
+
+For Scala and Java compilation [https://github.com/typesafehub/zinc Zinc Compiler] is used. It's a stand-alone version of SBT's incremental compiler, so its working and results should be the same as Play!'s.
+
 * The future
 
 <font color="red"><strong>If there will be interest, I will keep on developing this plugin</strong></font>. Only this will give me enough power to spend more time working on it.
 
 Based on my experience with [http://code.google.com/p/maven-play-plugin/ Play! 1.x Maven plugin] I know that there are many features that can be added to make this plugin at least as functional as the original Play! SBT Plugin.
+
+What I need is user feedback with as many as possible sample projects showing bugs or possibility of new features.
