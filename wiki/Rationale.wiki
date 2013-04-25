@@ -4,9 +4,9 @@
 
 I know, the is already [https://github.com/nanoko-project/maven-play2-plugin one plugin], but this is only a simple SBT wrapper.
 
-The real Maven build has to use Maven dependency system. With SBT wrapper you have to declare dependencies in two places: Maven pom.xml and SBT project/Build.scala files. Having two build systems in one project is strange.
+The real Maven build has to use Maven dependency system. With SBT wrapper you have to maintain two builds: Maven and SBT, declare dependencies in two places: Maven pom.xml and SBT project/Build.scala files and keep them synchronized. Having two build systems in one project is strange.
 
-I've tested if popular Maven reporting plugins work with that plugin. surprisingly most of them do. The exceptions are: Surefire Report and Cobertura.
+I've tested if popular Maven reporting plugins (JXR, Javadoc, Findbugs, PMD, CPD, Cobertura, Surefire Report) work with that plugin. Surprisingly most of them do. The exceptions are: Surefire Report and Cobertura.
 
 - Surefire Report shows no tests because they were not run by Maven Surefire plugin, so expected result files are not present
 
