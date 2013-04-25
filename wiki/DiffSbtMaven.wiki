@@ -83,4 +83,7 @@ The newer versions can be forced by adding:
 
 but then these versions are being used in runtime too (when creating distribution package).
 
-A workaround I used for now is to exclude Fluentium tests by default, and to create a profile with updated dependencies for running them in [https://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-alpha1/java/computer-database-jpa/pom.xml this test project]
+A workaround I used for now is to exclude Fluentium tests by default, and to create a profile with updated dependencies for running them in [https://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-alpha1/java/computer-database-jpa/pom.xml this test project], but I don't like this solution.
+
+The worst thing is that you can create SBT project that passes all tests and does not work in production, because it requires something that is present in the newer versions of any of the three dependencies (just like Fluentium does).
+I didn't test it, but will do soon.
