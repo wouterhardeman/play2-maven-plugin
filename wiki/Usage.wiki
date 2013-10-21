@@ -1,7 +1,110 @@
-Plugin supports Play! Framework 2.1.x and 2.2.x versions.
+*Plugin supports Play! Framework 2.1.x and 2.2.x versions*
 
 There are some differences when configuring Play! project for 2.1.x and 2.2.x.
 
 See [UsagePlay21 Play! Framework 2.1.x usage]
 
 and [UsagePlay22 Play! Framework 2.2.x usage].
+
+
+*1.0.0-alpha2 to 1.0.0-alpha3 migration*
+
+In your play2 project: 
+
+a) replace
+{{{
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-compiler</artifactId>
+            <version>${scala.version}</version>
+            <scope>provided</scope>
+        </dependency>
+}}}
+with
+{{{
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+}}}
+
+b) replace
+{{{
+            <plugin>
+                <groupId>com.google.code.play2-maven-plugin</groupId>
+                <artifactId>play2-maven-plugin</artifactId>
+                <version>${play2.plugin.version}</version>
+                <extensions>true</extensions>
+            </plugin>
+}}}
+with
+{{{
+            <plugin>
+                <groupId>com.google.code.play2-maven-plugin</groupId>
+                <artifactId>play2-maven-plugin</artifactId>
+                <version>${play2.plugin.version}</version>
+                <extensions>true</extensions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.google.code.play2-maven-plugin</groupId>
+                        <artifactId>play2-provider-play21</artifactId>
+                        <version>${play2.plugin.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+}}}
+
+* 1.0.0-alpha3 with Play! 2.1.x to 1.0.0-alpha3 with Play! 2.2.x migration*
+
+In your play2 project: 
+
+a) replace
+{{{
+            <plugin>
+                <groupId>com.google.code.play2-maven-plugin</groupId>
+                <artifactId>play2-maven-plugin</artifactId>
+                <version>${play2.plugin.version}</version>
+                <extensions>true</extensions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.google.code.play2-maven-plugin</groupId>
+                        <artifactId>play2-provider-play21</artifactId>
+                        <version>${play2.plugin.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+}}}
+with
+{{{
+            <plugin>
+                <groupId>com.google.code.play2-maven-plugin</groupId>
+                <artifactId>play2-maven-plugin</artifactId>
+                <version>${play2.plugin.version}</version>
+                <extensions>true</extensions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.google.code.play2-maven-plugin</groupId>
+                        <artifactId>play2-provider-play22</artifactId>
+                        <version>${play2.plugin.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+}}}
+
+b) replace any
+{{{
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-xxxx_${play2-scala.version}</artifactId>
+            <version>${play2.version}</version>
+        </dependency>
+}}}
+dependency with
+{{{
+        <dependency>
+            <groupId>play</groupId>
+            <artifactId>play-xxxx_${play2-scala.version}</artifactId>
+            <version>${play2.version}</version>
+        </dependency>
+}}}
