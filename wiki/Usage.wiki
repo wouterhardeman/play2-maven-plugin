@@ -7,6 +7,29 @@ See [UsagePlay21 Play! Framework 2.1.x usage]
 and [UsagePlay22 Play! Framework 2.2.x usage].
 
 
+*1.0.0-alpha3 to 1.0.0-alpha4-SNAPSHOT migration*
+
+In your play2 project: 
+
+a) add "mainLang=java" settings for every Java project, because "mainLang" tricky autodetection mechanism was removed and default value is "scala"
+{{{
+            <plugin>
+                <groupId>com.google.code.play2-maven-plugin</groupId>
+                <artifactId>play2-maven-plugin</artifactId>
+                <version>${play2.plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <mainLang>java</mainLang>
+                </configuration>
+            </plugin>
+}}}
+or
+{{{
+            <properties>
+                <play.mainLang>java</play.mainLang>
+            </properties>
+}}}
+
 *1.0.0-alpha2 to 1.0.0-alpha3 migration*
 
 In your play2 project: 
