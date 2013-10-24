@@ -8,7 +8,7 @@ For the first time plugin was tested with independent Play! modules: Deadbolt an
 
 Changes:
 
-- [http://code.google.com/p/play2-maven-plugin/issues/detail?id=11 Issue 11] remove tricky "mainLang" autodetection mechanism. "scala" is not default "mainLang" value. If you need "java", you have to add <mainLang>java</mainLang> to plugin's configuration section.
+- [http://code.google.com/p/play2-maven-plugin/issues/detail?id=11 Issue 11] remove tricky "mainLang" autodetection mechanism. "scala" is not default "mainLang" value. If you need "java", you have to add it to plugin's configuration section. See [http://play2-maven-plugin.googlecode.com/svn/trunk/test-projects/play22/java/ example projects for Java]
 
 * 1.0.0-alpha3 (2013.10.21)
 
