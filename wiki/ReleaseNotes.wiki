@@ -1,5 +1,15 @@
 Release notes:
 
+* 1.0.0-alpha4 (2013.10.24)
+
+New features:
+
+For the first time plugin was tested with independent Play! modules: Deadbolt and SecureSocial. It works!
+
+Changes:
+
+- [http://code.google.com/p/play2-maven-plugin/issues/detail?id=11 Issue 11] remove tricky "mainLang" autodetection mechanism. "scala" is not default "mainLang" value. If you need "java", you have to add <mainLang>java</mainLang> to plugin's configuration section.
+
 * 1.0.0-alpha3 (2013.10.21)
 
 New features:
