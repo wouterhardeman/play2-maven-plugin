@@ -52,7 +52,7 @@ to your play2 project or better add
 }}}
 to ~/.m2/settings.xml file. More info: http://maven.apache.org/guides/mini/guide-multiple-repositories.html
 
-*1.0.0-alpha3 to 1.0.0-alpha4-SNAPSHOT migration*
+*1.0.0-alpha3 to 1.0.0-alpha4 migration*
 
 In your play2 <strong>Java</strong> (not Scala) project: 
 
@@ -124,11 +124,30 @@ with
             </plugin>
 }}}
 
-* 1.0.0-alpha3 with Play! 2.1.x to 1.0.0-alpha3 with Play! 2.2.x migration*
+* 1.0.0-alpha4 with Play! 2.1.x to 1.0.0-alpha4 with Play! 2.2.x migration*
 
 In your play2 project: 
 
-a) replace
+a) change property values
+{{{
+    <properties>
+        ...
+        <play2.version>2.1.5</play2.version>
+        <play2-scala.version>2.10</play2-scala.version>
+        <scala.version>2.10.0</scala.version>
+    </properties>
+}}}
+to
+{{{
+    <properties>
+        ...
+        <play2.version>2.2.0</play2.version>
+        <play2-scala.version>2.10</play2-scala.version>
+        <scala.version>2.10.2</scala.version>
+    </properties>
+}}}
+
+b) replace
 {{{
             <plugin>
                 <groupId>com.google.code.play2-maven-plugin</groupId>
@@ -161,7 +180,7 @@ with
             </plugin>
 }}}
 
-b) replace any
+c) replace any
 {{{
         <dependency>
             <groupId>com.typesafe.play</groupId>
