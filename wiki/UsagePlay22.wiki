@@ -28,7 +28,7 @@ Simplest project (pom.xml file) should look like:
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <play2.plugin.version>1.0.0-alpha3</play2.plugin.version>
+        <play2.plugin.version>1.0.0-alpha4</play2.plugin.version>
         <play2.version>2.2.0</play2.version>
         <play2-scala.version>2.10</play2-scala.version>
         <scala.version>2.10.2</scala.version>
@@ -67,7 +67,6 @@ Simplest project (pom.xml file) should look like:
                 <groupId>com.google.code.play2-maven-plugin</groupId>
                 <artifactId>play2-maven-plugin</artifactId>
                 <version>${play2.plugin.version}</version>
-                <version>1.0.0-alpha1</version>
                 <extensions>true</extensions>
                 <dependencies>
                     <dependency>
@@ -112,7 +111,7 @@ Example with optional dependencies and configuration options:
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <play2.plugin.version>1.0.0-alpha3</play2.plugin.version>
+        <play2.plugin.version>1.0.0-alpha4</play2.plugin.version>
         <play2.version>2.2.0</play2.version>
         <play2-scala.version>2.10</play2-scala.version>
         <scala.version>2.10.2</scala.version>
