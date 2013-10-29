@@ -1,6 +1,6 @@
 Release notes:
 
-* 1.0.0-alpha5 (2013.10.29)
+* 1.0.0-alpha5 (2013.10.28)
 
 Many small changes, refactoring and polishing the code
 
