@@ -1,5 +1,17 @@
 Release notes:
 
+* 1.0.0-alpha5 (2013.10.29)
+
+Many small changes, refactoring and polishing the code
+
+Many new test projects added, most important:
+
+- [https://play2-maven-plugin.googlecode.com/svn/trunk/test-projects/activator Activator projects] - copied from [http://www.typesafe.com/activator/templates Typesafe Activator templates] and mavenized
+
+- [https://play2-maven-plugin.googlecode.com/svn/trunk/test-projects/play21/external-modules/webjars WebJars test projects for Play! 2.1.x] - copied from [https://github.com/webjars/sample-play2/tree/play-2.1 WebJars project] and mavenized
+
+- [https://play2-maven-plugin.googlecode.com/svn/trunk/test-projects/play22/external-modules/webjars WebJars test projects for Play! 2.2.x] - copied from [https://github.com/webjars/sample-play2/tree/play-2.2.x webJars project] and mavenized
+
 * 1.0.0-alpha4 (2013.10.24)
 
 New features:

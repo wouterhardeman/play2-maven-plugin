@@ -124,7 +124,7 @@ with
             </plugin>
 }}}
 
-* 1.0.0-alpha4 with Play! 2.1.x to 1.0.0-alpha4 with Play! 2.2.x migration*
+* Play! 2.1.x to Play! 2.2.x migration*
 
 In your play2 project: 
 
