@@ -16,7 +16,9 @@ With native Maven plugin generated Surefire and Cobertura reports just work: [ht
 
 2.
 
-Additionally, I see Play! users have many problems with SBT multimodule builds. I think, this should be a lot easier with Maven.
+Additionally, I see Play! users have many problems with SBT multimodule builds. I think, this is quite easy with Maven. See this extremely simple example:
+
+https://play2-maven-plugin.googlecode.com/svn/trunk/test-projects/play21/multimodule
 
 * How I wrote this plugin
 
