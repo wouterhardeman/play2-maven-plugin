@@ -60,9 +60,9 @@ It supports:
 
 - "*run*", "*start*" and "*stop*" commands for running Play! server, but without hot reloading yet
 
-It does not support:
-
 - multimodule builds (with modularized routes for example),
+
+It does not support:
 
 - hot reloading when running server,
 
