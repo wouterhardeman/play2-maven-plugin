@@ -1,0 +1,127 @@
+#summary WAR packaging.
+
+= WAR packaging =
+
+Adding WAR packaging is actually very simple process, slightly different for servler 2.5 and 3.0 compatible servers:
+
+== Servlet 2.5 ==
+
+Compatible servers: Tomcat 7, ...
+
+Add *war/WEB-INF/web.xml* file to your project containing:
+{{{
+<?xml version="1.0" ?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+        version="2.5">
+
+  <display-name>${project.name}</display-name>
+
+  <listener>
+      <listener-class>play.core.server.servlet25.Play2Servlet</listener-class>
+  </listener>
+
+  <servlet>
+    <servlet-name>play</servlet-name>
+    <servlet-class>play.core.server.servlet25.Play2Servlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>play</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+</web-app>
+}}}
+
+Add dependency:
+{{{
+    <dependencies>
+        ...
+        <dependency>
+            <groupId>com.github.play2war</groupId>
+            <artifactId>play2-war-core-servlet25_2.10</artifactId>
+            <version>1.2-beta4</version>
+        </dependency>
+    </dependencies>
+}}}
+
+Configure maven-war-plugin plugin:
+{{{
+    <build>
+        ...
+        <plugins>
+            ....
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
+                    <primaryArtifact>false</primaryArtifact>
+                    <warSourceDirectory>${basedir}/war</warSourceDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-war</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>war</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+}}}
+
+See working [http://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-alpha6/war/helloworld-war-servlet-2.5 example project].
+
+== Servlet 3.0 ==
+
+Compatible servers: Tomcat 8, ...
+
+Add dependency:
+{{{
+    <dependencies>
+        ...
+        <dependency>
+            <groupId>com.github.play2war</groupId>
+            <artifactId>play2-war-core-servlet30_2.10</artifactId>
+            <version>1.2-beta4</version>
+        </dependency>
+    </dependencies>
+}}}
+
+
+Configure maven-war-plugin plugin:
+{{{
+    <build>
+        ...
+        <plugins>
+            ....
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <primaryArtifact>false</primaryArtifact>
+                    <warSourceDirectory>${basedir}/war</warSourceDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-war</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>war</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+}}}
+
+See working [http://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-alpha6/war/helloworld-war-servlet-3.0 example project].
