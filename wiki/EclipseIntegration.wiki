@@ -2,7 +2,7 @@
 
 = Eclipse IDE integration =
 
-To import Maven project with *play2* packaging into Eclipse IDE *1.0.0-alpha6-SNAPSHOT* (*1.0.0-alpha6 soon*) or later version of the plugin is required.
+To import Maven project with *play2* packaging into Eclipse IDE *1.0.0-alpha6* or later version of the plugin is required.
 
 Use Scala IDE bundle (http://scala-ide.org/download/sdk.html) or install Scala IDE plugin from it's update site.
 
