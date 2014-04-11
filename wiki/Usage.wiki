@@ -52,6 +52,39 @@ to your play2 project or better add
 }}}
 to ~/.m2/settings.xml file. More info: http://maven.apache.org/guides/mini/guide-multiple-repositories.html
 
+*1.0.0-alpha5 to 1.0.0-alpha6 migration*
+
+Remove provider from plugin's dependencies (provider auto-discovery mechanism will add this dependency automatically).
+For example replace
+{{{
+            <plugin>
+                <groupId>com.google.code.play2-maven-plugin</groupId>
+                <artifactId>play2-maven-plugin</artifactId>
+                <version>${play2.plugin.version}</version>
+                <extensions>true</extensions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.google.code.play2-maven-plugin</groupId>
+                        <artifactId>play2-provider-play22</artifactId>
+                        <version>${play2.plugin.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+}}}
+with
+{{{
+            <plugin>
+                <groupId>com.google.code.play2-maven-plugin</groupId>
+                <artifactId>play2-maven-plugin</artifactId>
+                <version>${play2.plugin.version}</version>
+                <extensions>true</extensions>
+            </plugin>
+}}}
+
+*1.0.0-alpha4 to 1.0.0-alpha5 migration*
+
+No changes required.
+
 *1.0.0-alpha3 to 1.0.0-alpha4 migration*
 
 In your play2 <strong>Java</strong> (not Scala) project: 
