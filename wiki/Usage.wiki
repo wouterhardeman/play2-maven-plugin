@@ -81,6 +81,27 @@ with
             </plugin>
 }}}
 
+Add sbt-compiler-maven-plugin
+
+{{{
+    <properties>
+        ...
+        <sbt-compiler.plugin.version>1.0.0-beta3</sbt-compiler.plugin.version>
+    </properties>
+
+    <build>
+        ...
+        <plugins>
+            ...
+            <plugin>
+                <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
+                <artifactId>sbt-compiler-maven-plugin</artifactId>
+                <version>${sbt-compiler.plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+}}}
+
 *1.0.0-alpha4 to 1.0.0-alpha5 migration*
 
 No changes required.
