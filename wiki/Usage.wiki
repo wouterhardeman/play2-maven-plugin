@@ -1,3 +1,5 @@
+#summary Plugin's usage
+
 *Plugin supports Play! Framework 2.1.x and 2.2.x versions*
 
 There are some differences when configuring Play! project for 2.1.x and 2.2.x.
