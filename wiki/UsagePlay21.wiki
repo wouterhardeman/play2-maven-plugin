@@ -1,3 +1,5 @@
+#summary Plugin configuration for project using Play! Framework 2.1.x
+
 Simplest project (pom.xml file) should look like:
 
 {{{
