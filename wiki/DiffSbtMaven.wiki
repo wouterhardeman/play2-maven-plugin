@@ -1,3 +1,5 @@
+#summary Problematic difference between Maven and SBT
+
 *Differences beteen SBT and Maven builds*
 
 1.
