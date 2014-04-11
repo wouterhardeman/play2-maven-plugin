@@ -1,4 +1,4 @@
-#summary WAR packaging.
+#summary WAR packaging
 
 = WAR packaging =
 
