@@ -121,3 +121,37 @@ Configure maven-war-plugin plugin:
 }}}
 
 See working [http://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-alpha6/war/helloworld-war-servlet-3.0 example project] tested with Apache Tomcat 7.0.52 and 8.0.3.
+
+== Attaching WAR to project build artifacts ==
+
+If you want to install/deploy generated WAR file, you have to attach it to the project. Do it by adding:
+{{{
+    <build>
+        ...
+        <plugins>
+            ....
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>attach-war</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                             <artifacts>
+                                 <artifact>
+                                     <file>${project.build.directory}/${project.build.finalName}.war</file>
+                                     <type>war</type>
+                                 </artifact>
+                             </artifacts>
+                         </configuration>
+                     </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+}}}
