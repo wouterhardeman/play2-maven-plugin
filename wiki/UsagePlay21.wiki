@@ -28,10 +28,11 @@ Simplest project (pom.xml file) should look like:
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <play2.plugin.version>1.0.0-alpha5</play2.plugin.version>
         <play2.version>2.1.5</play2.version>
-        <play2-scala.version>2.10</play2-scala.version>
         <scala.version>2.10.0</scala.version>
+
+        <play2.plugin.version>1.0.0-alpha6</play2.plugin.version>
+        <sbt-compiler.plugin.version>1.0.0-beta3</sbt-compiler.plugin.version>
     </properties>
 
     <dependencies>
@@ -43,7 +44,7 @@ Simplest project (pom.xml file) should look like:
 
         <dependency>
             <groupId>play</groupId>
-            <artifactId>play_${play2-scala.version}</artifactId>
+            <artifactId>play_2.10</artifactId>
             <version>${play2.version}</version>
         </dependency>
     </dependencies>
@@ -68,13 +69,12 @@ Simplest project (pom.xml file) should look like:
                 <artifactId>play2-maven-plugin</artifactId>
                 <version>${play2.plugin.version}</version>
                 <extensions>true</extensions>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.google.code.play2-maven-plugin</groupId>
-                        <artifactId>play2-provider-play21</artifactId>
-                        <version>${play2.plugin.version}</version>
-                    </dependency>
-                </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
+                <artifactId>sbt-compiler-maven-plugin</artifactId>
+                <version>${sbt-compiler.plugin.version}</version>
             </plugin>
         </plugins>
     </build>
@@ -111,10 +111,11 @@ Example with optional dependencies and configuration options:
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <play2.plugin.version>1.0.0-alpha5</play2.plugin.version>
         <play2.version>2.1.5</play2.version>
-        <play2-scala.version>2.10</play2-scala.version>
         <scala.version>2.10.0</scala.version>
+
+        <play2.plugin.version>1.0.0-alpha6</play2.plugin.version>
+        <sbt-compiler.plugin.version>1.0.0-beta3</sbt-compiler.plugin.version>
     </properties>
 
     <dependencies>
@@ -126,42 +127,42 @@ Example with optional dependencies and configuration options:
 
         <dependency>
             <groupId>play</groupId>
-            <artifactId>play_${play2-scala.version}</artifactId>
+            <artifactId>play_2.10</artifactId>
             <version>${play2.version}</version>
         </dependency>
 
         <!-- only if using Anorm -->
         <dependency>
             <groupId>play</groupId>
-            <artifactId>anorm_${play2-scala.version}</artifactId>
+            <artifactId>anorm_2.10</artifactId>
             <version>${play2.version}</version>
         </dependency>
 
         <!-- only if using JDBC -->
         <dependency>
             <groupId>play</groupId>
-            <artifactId>play-jdbc_${play2-scala.version}</artifactId>
+            <artifactId>play-jdbc_2.10</artifactId>
             <version>${play2.version}</version>
         </dependency>
 
         <!-- only if using Java -->
         <dependency>
             <groupId>play</groupId>
-            <artifactId>play-java_${play2-scala.version}</artifactId>
+            <artifactId>play-java_2.10</artifactId>
             <version>${play2.version}</version>
         </dependency>
 
         <!-- only if using Ebean -->
         <dependency>
             <groupId>play</groupId>
-            <artifactId>play-java-ebean_${play2-scala.version}</artifactId>
+            <artifactId>play-java-ebean_2.10</artifactId>
             <version>${play2.version}</version>
         </dependency>
 
         <!-- only if using JPA -->
         <dependency>
             <groupId>play</groupId>
-            <artifactId>play-java-jpa_${play2-scala.version}</artifactId>
+            <artifactId>play-java-jpa_2.10</artifactId>
             <version>${play2.version}</version>
         </dependency>
 
@@ -175,7 +176,7 @@ Example with optional dependencies and configuration options:
         <!-- only if there are tests in the project -->
         <dependency>
             <groupId>play</groupId>
-            <artifactId>play-test_${play2-scala.version}</artifactId>
+            <artifactId>play-test_2.10</artifactId>
             <version>${play2.version}</version>
             <scope>test</scope>
         </dependency>
@@ -201,13 +202,6 @@ Example with optional dependencies and configuration options:
                 <artifactId>play2-maven-plugin</artifactId>
                 <version>${play2.plugin.version}</version>
                 <extensions>true</extensions>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.google.code.play2-maven-plugin</groupId>
-                        <artifactId>play2-provider-play21</artifactId>
-                        <version>${play2.plugin.version}</version>
-                    </dependency>
-                </dependencies>
                 <configuration>
                     <!-- only if using database evolutions -->
                     <serverJvmArgs>-DapplyEvolutions.default=true</serverJvmArgs>
@@ -236,4 +230,4 @@ Example with optional dependencies and configuration options:
 </project>
 }}}
 
-For more sample projects go to [http://play2-maven-plugin.googlecode.com/svn/trunk/test-projects/play21/ Play! 2.1.x test projects].
+For more sample projects go to [http://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-alpha6/play21/ Play! 2.1.x test projects].
