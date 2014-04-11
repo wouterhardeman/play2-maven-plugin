@@ -6,8 +6,6 @@ Adding WAR packaging is actually very simple process, slightly different for ser
 
 == Servlet 2.5 ==
 
-Compatible servers: Jetty 7, Apache Tomcat 7.
-
 Add *war/WEB-INF/web.xml* file to your project containing:
 {{{
 <?xml version="1.0" ?>
@@ -76,11 +74,9 @@ Configure maven-war-plugin plugin:
     </build>
 }}}
 
-See working [http://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-alpha6/war/helloworld-war-servlet-2.5 example project] tested with Apache Tomcat 7.0.52.
+See working [http://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-alpha6/war/helloworld-war-servlet-2.5 example project] tested with Apache Tomcat 6.0.33 and 7.0.52.
 
 == Servlet 3.0 ==
-
-Compatible servers: Jetty 8, Apache Tomcat 8.
 
 Add dependency:
 {{{
@@ -124,4 +120,4 @@ Configure maven-war-plugin plugin:
     </build>
 }}}
 
-See working [http://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-alpha6/war/helloworld-war-servlet-3.0 example project] tested with Apache Tomcat 8.0.3.
+See working [http://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-alpha6/war/helloworld-war-servlet-3.0 example project] tested with Apache Tomcat 7.0.52 and 8.0.3.
