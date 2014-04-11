@@ -1,3 +1,5 @@
+#summary Why I wrote this plugin
+
 * Why I wrote this plugin
 
 1.
