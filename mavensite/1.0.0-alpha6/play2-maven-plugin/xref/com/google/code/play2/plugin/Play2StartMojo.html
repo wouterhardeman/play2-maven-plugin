@@ -131,56 +131,52 @@
 <a class="jxr_linenumber" name="L123" href="#L123">123</a>             <strong class="jxr_keyword">return</strong>;
 <a class="jxr_linenumber" name="L124" href="#L124">124</a>         }
 <a class="jxr_linenumber" name="L125" href="#L125">125</a> 
-<a class="jxr_linenumber" name="L126" href="#L126">126</a>         File logFile = <strong class="jxr_keyword">null</strong>;
-<a class="jxr_linenumber" name="L127" href="#L127">127</a>         File logDirectory = <strong class="jxr_keyword">new</strong> File( baseDir, <span class="jxr_string">"logs"</span> );
-<a class="jxr_linenumber" name="L128" href="#L128">128</a>         logFile = <strong class="jxr_keyword">new</strong> File( logDirectory, <span class="jxr_string">"system.out"</span> );
+<a class="jxr_linenumber" name="L126" href="#L126">126</a>         getLog().info( <span class="jxr_string">"Starting Play! server"</span> );
+<a class="jxr_linenumber" name="L127" href="#L127">127</a> 
+<a class="jxr_linenumber" name="L128" href="#L128">128</a>         Java javaTask = getStartServerTask( startSpawn );
 <a class="jxr_linenumber" name="L129" href="#L129">129</a> 
-<a class="jxr_linenumber" name="L130" href="#L130">130</a>         getLog().info( String.format( <span class="jxr_string">"Starting Play! server, output is redirected to %s"</span>, logFile.getPath() ) );
-<a class="jxr_linenumber" name="L131" href="#L131">131</a> 
-<a class="jxr_linenumber" name="L132" href="#L132">132</a>         Java javaTask = getStartServerTask( logFile, startSpawn );
+<a class="jxr_linenumber" name="L130" href="#L130">130</a>         <a href="../../../../../com/google/code/play2/plugin/AbstractAntJavaBasedPlay2Mojo.html">JavaRunnable</a> runner = <strong class="jxr_keyword">new</strong> <a href="../../../../../com/google/code/play2/plugin/AbstractAntJavaBasedPlay2Mojo.html">JavaRunnable</a>( javaTask );
+<a class="jxr_linenumber" name="L131" href="#L131">131</a>         Thread t = <strong class="jxr_keyword">new</strong> Thread( runner, <span class="jxr_string">"Play! server runner"</span> );
+<a class="jxr_linenumber" name="L132" href="#L132">132</a>         t.start();
 <a class="jxr_linenumber" name="L133" href="#L133">133</a> 
-<a class="jxr_linenumber" name="L134" href="#L134">134</a>         <a href="../../../../../com/google/code/play2/plugin/AbstractAntJavaBasedPlay2Mojo.html">JavaRunnable</a> runner = <strong class="jxr_keyword">new</strong> <a href="../../../../../com/google/code/play2/plugin/AbstractAntJavaBasedPlay2Mojo.html">JavaRunnable</a>( javaTask );
-<a class="jxr_linenumber" name="L135" href="#L135">135</a>         Thread t = <strong class="jxr_keyword">new</strong> Thread( runner, <span class="jxr_string">"Play! server runner"</span> );
-<a class="jxr_linenumber" name="L136" href="#L136">136</a>         t.start();
-<a class="jxr_linenumber" name="L137" href="#L137">137</a> 
-<a class="jxr_linenumber" name="L138" href="#L138">138</a>         <strong class="jxr_keyword">if</strong> ( startSpawn )
-<a class="jxr_linenumber" name="L139" href="#L139">139</a>         {
-<a class="jxr_linenumber" name="L140" href="#L140">140</a>             <strong class="jxr_keyword">try</strong>
+<a class="jxr_linenumber" name="L134" href="#L134">134</a>         <strong class="jxr_keyword">if</strong> ( startSpawn )
+<a class="jxr_linenumber" name="L135" href="#L135">135</a>         {
+<a class="jxr_linenumber" name="L136" href="#L136">136</a>             <strong class="jxr_keyword">try</strong>
+<a class="jxr_linenumber" name="L137" href="#L137">137</a>             {
+<a class="jxr_linenumber" name="L138" href="#L138">138</a>                 t.join();
+<a class="jxr_linenumber" name="L139" href="#L139">139</a>             }
+<a class="jxr_linenumber" name="L140" href="#L140">140</a>             <strong class="jxr_keyword">catch</strong> ( InterruptedException e )
 <a class="jxr_linenumber" name="L141" href="#L141">141</a>             {
-<a class="jxr_linenumber" name="L142" href="#L142">142</a>                 t.join();
-<a class="jxr_linenumber" name="L143" href="#L143">143</a>             }
-<a class="jxr_linenumber" name="L144" href="#L144">144</a>             <strong class="jxr_keyword">catch</strong> ( InterruptedException e )
-<a class="jxr_linenumber" name="L145" href="#L145">145</a>             {
-<a class="jxr_linenumber" name="L146" href="#L146">146</a>                 t.interrupt();
-<a class="jxr_linenumber" name="L147" href="#L147">147</a>                 <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> MojoExecutionException( <span class="jxr_string">"?"</span>, e );
-<a class="jxr_linenumber" name="L148" href="#L148">148</a>             }
-<a class="jxr_linenumber" name="L149" href="#L149">149</a>             Exception startServerException = runner.getException();
-<a class="jxr_linenumber" name="L150" href="#L150">150</a>             <strong class="jxr_keyword">if</strong> ( startServerException != <strong class="jxr_keyword">null</strong> )
-<a class="jxr_linenumber" name="L151" href="#L151">151</a>             {
-<a class="jxr_linenumber" name="L152" href="#L152">152</a>                 <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> MojoExecutionException( <span class="jxr_string">"?"</span>, startServerException );
-<a class="jxr_linenumber" name="L153" href="#L153">153</a>             }
-<a class="jxr_linenumber" name="L154" href="#L154">154</a>         }
-<a class="jxr_linenumber" name="L155" href="#L155">155</a>         <em class="jxr_comment">// else don't invoke t.join(), it will lead to a deadlock</em>
+<a class="jxr_linenumber" name="L142" href="#L142">142</a>                 t.interrupt();
+<a class="jxr_linenumber" name="L143" href="#L143">143</a>                 <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> MojoExecutionException( <span class="jxr_string">"?"</span>, e );
+<a class="jxr_linenumber" name="L144" href="#L144">144</a>             }
+<a class="jxr_linenumber" name="L145" href="#L145">145</a>             Exception startServerException = runner.getException();
+<a class="jxr_linenumber" name="L146" href="#L146">146</a>             <strong class="jxr_keyword">if</strong> ( startServerException != <strong class="jxr_keyword">null</strong> )
+<a class="jxr_linenumber" name="L147" href="#L147">147</a>             {
+<a class="jxr_linenumber" name="L148" href="#L148">148</a>                 <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> MojoExecutionException( <span class="jxr_string">"?"</span>, startServerException );
+<a class="jxr_linenumber" name="L149" href="#L149">149</a>             }
+<a class="jxr_linenumber" name="L150" href="#L150">150</a>         }
+<a class="jxr_linenumber" name="L151" href="#L151">151</a>         <em class="jxr_comment">// else don't invoke t.join(), it will lead to a deadlock</em>
+<a class="jxr_linenumber" name="L152" href="#L152">152</a> 
+<a class="jxr_linenumber" name="L153" href="#L153">153</a>         <strong class="jxr_keyword">if</strong> ( startSynchro )
+<a class="jxr_linenumber" name="L154" href="#L154">154</a>         {
+<a class="jxr_linenumber" name="L155" href="#L155">155</a>             String rootUrl = getRootUrl( startCheckUrl );
 <a class="jxr_linenumber" name="L156" href="#L156">156</a> 
-<a class="jxr_linenumber" name="L157" href="#L157">157</a>         <strong class="jxr_keyword">if</strong> ( startSynchro )
-<a class="jxr_linenumber" name="L158" href="#L158">158</a>         {
-<a class="jxr_linenumber" name="L159" href="#L159">159</a>             String rootUrl = getRootUrl( startCheckUrl );
-<a class="jxr_linenumber" name="L160" href="#L160">160</a> 
-<a class="jxr_linenumber" name="L161" href="#L161">161</a>             getLog().info( String.format( <span class="jxr_string">"Waiting for %s"</span>, rootUrl ) );
-<a class="jxr_linenumber" name="L162" href="#L162">162</a> 
-<a class="jxr_linenumber" name="L163" href="#L163">163</a>             waitForServerStarted( rootUrl, runner, startTimeout, startSpawn );
-<a class="jxr_linenumber" name="L164" href="#L164">164</a>         }
-<a class="jxr_linenumber" name="L165" href="#L165">165</a> 
-<a class="jxr_linenumber" name="L166" href="#L166">166</a>         getLog().info( <span class="jxr_string">"Play! server started"</span> );
-<a class="jxr_linenumber" name="L167" href="#L167">167</a>     }
-<a class="jxr_linenumber" name="L168" href="#L168">168</a> 
-<a class="jxr_linenumber" name="L169" href="#L169">169</a>     @Override
-<a class="jxr_linenumber" name="L170" href="#L170">170</a>     <strong class="jxr_keyword">public</strong> MavenProject getProject()
-<a class="jxr_linenumber" name="L171" href="#L171">171</a>     {
-<a class="jxr_linenumber" name="L172" href="#L172">172</a>         <strong class="jxr_keyword">return</strong> executedProject;
-<a class="jxr_linenumber" name="L173" href="#L173">173</a>     }
-<a class="jxr_linenumber" name="L174" href="#L174">174</a> 
-<a class="jxr_linenumber" name="L175" href="#L175">175</a> }
+<a class="jxr_linenumber" name="L157" href="#L157">157</a>             getLog().info( String.format( <span class="jxr_string">"Waiting for %s"</span>, rootUrl ) );
+<a class="jxr_linenumber" name="L158" href="#L158">158</a> 
+<a class="jxr_linenumber" name="L159" href="#L159">159</a>             waitForServerStarted( rootUrl, runner, startTimeout, startSpawn );
+<a class="jxr_linenumber" name="L160" href="#L160">160</a>         }
+<a class="jxr_linenumber" name="L161" href="#L161">161</a> 
+<a class="jxr_linenumber" name="L162" href="#L162">162</a>         getLog().info( <span class="jxr_string">"Play! server started"</span> );
+<a class="jxr_linenumber" name="L163" href="#L163">163</a>     }
+<a class="jxr_linenumber" name="L164" href="#L164">164</a> 
+<a class="jxr_linenumber" name="L165" href="#L165">165</a>     @Override
+<a class="jxr_linenumber" name="L166" href="#L166">166</a>     <strong class="jxr_keyword">public</strong> MavenProject getProject()
+<a class="jxr_linenumber" name="L167" href="#L167">167</a>     {
+<a class="jxr_linenumber" name="L168" href="#L168">168</a>         <strong class="jxr_keyword">return</strong> executedProject;
+<a class="jxr_linenumber" name="L169" href="#L169">169</a>     }
+<a class="jxr_linenumber" name="L170" href="#L170">170</a> 
+<a class="jxr_linenumber" name="L171" href="#L171">171</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2013&#x2013;2014. All rights reserved.</div>

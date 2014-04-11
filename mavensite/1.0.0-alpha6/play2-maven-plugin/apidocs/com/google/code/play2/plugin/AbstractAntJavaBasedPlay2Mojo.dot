@@ -33,27 +33,27 @@ digraph G {
 	c91:p -> c103:p [dir=back,arrowtail=empty];
 	// com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo NAVASSOC org.apache.maven.artifact.Artifact
 	c103:p -> c146:p [taillabel="", label="", headlabel="*", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// com.google.code.play2.plugin.AbstractPlay2ServerMojo DEPEND org.apache.tools.ant.taskdefs.Java
-	c79:p -> c162:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// com.google.code.play2.plugin.AbstractPlay2ServerMojo DEPEND org.apache.tools.ant.Project
+	c79:p -> c160:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// com.google.code.play2.plugin.AbstractPlay2ServerMojo DEPEND org.apache.tools.ant.taskdefs.Java
 	c79:p -> c179:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// com.google.code.play2.plugin.AbstractPlay2Mojo DEPEND org.apache.maven.artifact.Artifact
 	c91:p -> c146:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo DEPEND org.apache.tools.ant.taskdefs.Java
-	c103:p -> c162:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo DEPEND org.apache.tools.ant.Project
+	c103:p -> c160:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo DEPEND org.apache.maven.artifact.Artifact
 	c103:p -> c146:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo DEPEND org.apache.tools.ant.Project
+	// com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo DEPEND org.apache.tools.ant.taskdefs.Java
 	c103:p -> c179:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// org.apache.tools.ant.taskdefs.Java
-	c162 [label=<<table title="org.apache.tools.ant.taskdefs.Java" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://maven-play-plugin.googlecode.com/svn/apidocs/org/apache/ant/ant/1.9.0/org/apache/tools/ant/taskdefs/Java.html">
+	c179 [label=<<table title="org.apache.tools.ant.taskdefs.Java" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://maven-play-plugin.googlecode.com/svn/apidocs/org/apache/ant/ant/1.9.0/org/apache/tools/ant/taskdefs/Java.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> Java </td></tr>
 <tr><td align="center" balign="center"><font point-size="7.0"> org.apache.tools.ant.taskdefs </font></td></tr>
 		</table></td></tr>
 		</table>>, URL="http://maven-play-plugin.googlecode.com/svn/apidocs/org/apache/ant/ant/1.9.0/org/apache/tools/ant/taskdefs/Java.html", fontname="arial", fontcolor="black", fontsize=9.0];
 	// org.apache.tools.ant.Project
-	c179 [label=<<table title="org.apache.tools.ant.Project" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://maven-play-plugin.googlecode.com/svn/apidocs/org/apache/ant/ant/1.9.0/org/apache/tools/ant/Project.html">
+	c160 [label=<<table title="org.apache.tools.ant.Project" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://maven-play-plugin.googlecode.com/svn/apidocs/org/apache/ant/ant/1.9.0/org/apache/tools/ant/Project.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> Project </td></tr>
 <tr><td align="center" balign="center"><font point-size="7.0"> org.apache.tools.ant </font></td></tr>
