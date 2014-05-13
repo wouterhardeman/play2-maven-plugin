@@ -3,13 +3,13 @@
 <html lang="pl">
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-<title>Index (Play! 2.x Maven Plugin 1.0.0-alpha6 API)</title>
+<title>Index (Play! 2.x Maven Plugin 1.0.0-alpha7-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="./stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Index (Play! 2.x Maven Plugin 1.0.0-alpha6 API)";
+        parent.document.title="Index (Play! 2.x Maven Plugin 1.0.0-alpha7-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -99,6 +99,10 @@
 </dd>
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2DistMojo.html#AbstractPlay2DistMojo()">AbstractPlay2DistMojo()</a></span> - Constructor for class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2DistMojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2DistMojo</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="./com/google/code/play2/plugin/AbstractPlay2EnhanceMojo.html" title="class in com.google.code.play2.plugin"><span class="strong">AbstractPlay2EnhanceMojo</span></a> - Class in <a href="./com/google/code/play2/plugin/package-summary.html">com.google.code.play2.plugin</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2EnhanceMojo.html#AbstractPlay2EnhanceMojo()">AbstractPlay2EnhanceMojo()</a></span> - Constructor for class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2EnhanceMojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2EnhanceMojo</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="./com/google/code/play2/plugin/AbstractPlay2Mojo.html" title="class in com.google.code.play2.plugin"><span class="strong">AbstractPlay2Mojo</span></a> - Class in <a href="./com/google/code/play2/plugin/package-summary.html">com.google.code.play2.plugin</a></dt>
 <dd>
 <div class="block">Abstract base class for Play&#33; Mojos.</div>
@@ -144,6 +148,10 @@
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractArchivingMojo.html#checkArchiverForProblems(org.codehaus.plexus.archiver.Archiver)">checkArchiverForProblems(Archiver)</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractArchivingMojo.html" title="class in com.google.code.play2.plugin">AbstractArchivingMojo</a></dt>
 <dd>
 <div class="block">Check for potential "Duplicate file" exception before archive processing starts</div>
+</dd>
+<dt><span class="strong"><a href="./com/google/code/play2/plugin/Play2EbeanEnhanceMojo.html#collectClassFilesToEnhance(long, java.io.File, java.lang.String)">collectClassFilesToEnhance(long, File, String)</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/Play2EbeanEnhanceMojo.html" title="class in com.google.code.play2.plugin">Play2EbeanEnhanceMojo</a></dt>
+<dd>
+<div class="block">Process all the comma delimited list of packages.</div>
 </dd>
 <dt><a href="./com/google/code/play2/plugin/package-summary.html">com.google.code.play2.plugin</a> - package com.google.code.play2.plugin</dt>
 <dd>&nbsp;</dd>
@@ -191,6 +199,12 @@
 <dl>
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/LessDependencyCache.html#get(java.lang.String)">get(String)</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/LessDependencyCache.html" title="class in com.google.code.play2.plugin">LessDependencyCache</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2Mojo.html#getAllDependencies(org.apache.maven.artifact.Artifact)">getAllDependencies(Artifact)</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2Mojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2Mojo</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2EnhanceMojo.html#getAnalysisCacheFile()">getAnalysisCacheFile()</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2EnhanceMojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2EnhanceMojo</a></dt>
+<dd>
+<div class="block">Returns SBT incremental main compilation analysis cache file location for a project.</div>
+</dd>
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2AssetsCompileMojo.html#getAssetsExcludes()">getAssetsExcludes()</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2AssetsCompileMojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2AssetsCompileMojo</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/Play2ClosureCompileMojo.html#getAssetsExcludes()">getAssetsExcludes()</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/Play2ClosureCompileMojo.html" title="class in com.google.code.play2.plugin">Play2ClosureCompileMojo</a></dt>
@@ -206,8 +220,6 @@
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/Play2CoffeeCompileMojo.html#getAssetsIncludes()">getAssetsIncludes()</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/Play2CoffeeCompileMojo.html" title="class in com.google.code.play2.plugin">Play2CoffeeCompileMojo</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/Play2LessCompileMojo.html#getAssetsIncludes()">getAssetsIncludes()</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/Play2LessCompileMojo.html" title="class in com.google.code.play2.plugin">Play2LessCompileMojo</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2Mojo.html#getDeclaredProvider()">getDeclaredProvider()</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2Mojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2Mojo</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractDependencyProcessingPlay2Mojo.html#getDependencyArtifact(java.util.Collection, java.lang.String, java.lang.String, java.lang.String)">getDependencyArtifact(Collection&lt;?&gt;, String, String, String)</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractDependencyProcessingPlay2Mojo.html" title="class in com.google.code.play2.plugin">AbstractDependencyProcessingPlay2Mojo</a></dt>
 <dd>&nbsp;</dd>
@@ -231,15 +243,17 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2Mojo.html#getProvider()">getProvider()</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2Mojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2Mojo</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2Mojo.html#getResolvedArtifact(java.lang.String, java.lang.String, java.lang.String)">getResolvedArtifact(String, String, String)</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2Mojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2Mojo</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2StartServerMojo.html#getRootUrl(java.lang.String)">getRootUrl(String)</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2StartServerMojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2StartServerMojo</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2EnhanceMojo.html#getSbtAnalysisProcessor()">getSbtAnalysisProcessor()</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2EnhanceMojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2EnhanceMojo</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2ServerMojo.html#getServerJvmArgs()">getServerJvmArgs()</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2ServerMojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2ServerMojo</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2StartServerMojo.html#getStartServerTask(boolean)">getStartServerTask(boolean)</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2StartServerMojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2StartServerMojo</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractArchivingMojo.html#getWarArchiver()">getWarArchiver()</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractArchivingMojo.html" title="class in com.google.code.play2.plugin">AbstractArchivingMojo</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2Mojo.html#getWellKnownProvider()">getWellKnownProvider()</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2Mojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2Mojo</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractArchivingMojo.html#getZipArchiver()">getZipArchiver()</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractArchivingMojo.html" title="class in com.google.code.play2.plugin">AbstractArchivingMojo</a></dt>
 <dd>&nbsp;</dd>
@@ -379,6 +393,10 @@
 <dd>
 <div class="block">Used to automatically select one of the "well known" Play&#33; providers if no provider added explicitly as plugin's dependency.</div>
 </dd>
+<dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2Mojo.html#plugin">plugin</a></span> - Variable in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2Mojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2Mojo</a></dt>
+<dd>
+<div class="block">Plugin descriptor used to retrieve this plugin's properties.</div>
+</dd>
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2ServerMojo.html#prepareAntJavaTask(boolean)">prepareAntJavaTask(boolean)</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2ServerMojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2ServerMojo</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2DistMojo.html#prepareArchiver()">prepareArchiver()</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2DistMojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2DistMojo</a></dt>
@@ -421,6 +439,10 @@
 </a>
 <h2 class="title">S</h2>
 <dl>
+<dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2EnhanceMojo.html#sbtVersion">sbtVersion</a></span> - Variable in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2EnhanceMojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2EnhanceMojo</a></dt>
+<dd>
+<div class="block">Forced SBT version.</div>
+</dd>
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/LessDependencyCache.html#set(java.lang.String, java.util.Set)">set(String, Set&lt;String&gt;)</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/LessDependencyCache.html" title="class in com.google.code.play2.plugin">LessDependencyCache</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./com/google/code/play2/plugin/AbstractPlay2StopServerMojo.html#stopServer()">stopServer()</a></span> - Method in class com.google.code.play2.plugin.<a href="./com/google/code/play2/plugin/AbstractPlay2StopServerMojo.html" title="class in com.google.code.play2.plugin">AbstractPlay2StopServerMojo</a></dt>

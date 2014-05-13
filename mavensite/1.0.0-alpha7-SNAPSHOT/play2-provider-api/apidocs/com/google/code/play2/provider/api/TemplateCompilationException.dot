@@ -10,18 +10,18 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// com.google.code.play2.provider.api.TemplateCompilationException
-	c246 [label=<<table title="com.google.code.play2.provider.api.TemplateCompilationException" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./TemplateCompilationException.html">
+	c277 [label=<<table title="com.google.code.play2.provider.api.TemplateCompilationException" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./TemplateCompilationException.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> TemplateCompilationException </td></tr>
 		</table></td></tr>
 		</table>>, URL="./TemplateCompilationException.html", fontname="arial", fontcolor="black", fontsize=9.0];
 	// com.google.code.play2.provider.api.SourceGenerationException
-	c247 [label=<<table title="com.google.code.play2.provider.api.SourceGenerationException" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SourceGenerationException.html">
+	c278 [label=<<table title="com.google.code.play2.provider.api.SourceGenerationException" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SourceGenerationException.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> SourceGenerationException </td></tr>
 		</table></td></tr>
 		</table>>, URL="./SourceGenerationException.html", fontname="arial", fontcolor="black", fontsize=9.0];
 	//com.google.code.play2.provider.api.TemplateCompilationException extends com.google.code.play2.provider.api.SourceGenerationException
-	c247:p -> c246:p [dir=back,arrowtail=empty];
+	c278:p -> c277:p [dir=back,arrowtail=empty];
 }
 

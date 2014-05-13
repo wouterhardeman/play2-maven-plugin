@@ -123,38 +123,44 @@ digraph G {
 <tr><td align="center" balign="center"><font face="arial italic"> AbstractPlay2Mojo </font></td></tr>
 		</table></td></tr>
 		</table>>, URL="./AbstractPlay2Mojo.html", fontname="arial", fontcolor="black", fontsize=9.0];
+	// com.google.code.play2.plugin.AbstractPlay2EnhanceMojo
+	c19 [label=<<table title="com.google.code.play2.plugin.AbstractPlay2EnhanceMojo" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractPlay2EnhanceMojo.html">
+		<tr><td><table border="0" cellspacing="0" cellpadding="1">
+<tr><td align="center" balign="center"><font face="arial italic"> AbstractPlay2EnhanceMojo </font></td></tr>
+		</table></td></tr>
+		</table>>, URL="./AbstractPlay2EnhanceMojo.html", fontname="arial", fontcolor="black", fontsize=9.0];
 	// com.google.code.play2.plugin.AbstractPlay2DistMojo
-	c19 [label=<<table title="com.google.code.play2.plugin.AbstractPlay2DistMojo" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractPlay2DistMojo.html">
+	c20 [label=<<table title="com.google.code.play2.plugin.AbstractPlay2DistMojo" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractPlay2DistMojo.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"><font face="arial italic"> AbstractPlay2DistMojo </font></td></tr>
 		</table></td></tr>
 		</table>>, URL="./AbstractPlay2DistMojo.html", fontname="arial", fontcolor="black", fontsize=9.0];
 	// com.google.code.play2.plugin.AbstractPlay2AssetsCompileMojo
-	c20 [label=<<table title="com.google.code.play2.plugin.AbstractPlay2AssetsCompileMojo" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractPlay2AssetsCompileMojo.html">
+	c21 [label=<<table title="com.google.code.play2.plugin.AbstractPlay2AssetsCompileMojo" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractPlay2AssetsCompileMojo.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"><font face="arial italic"> AbstractPlay2AssetsCompileMojo </font></td></tr>
 		</table></td></tr>
 		</table>>, URL="./AbstractPlay2AssetsCompileMojo.html", fontname="arial", fontcolor="black", fontsize=9.0];
 	// com.google.code.play2.plugin.AbstractDependencyProcessingPlay2Mojo
-	c21 [label=<<table title="com.google.code.play2.plugin.AbstractDependencyProcessingPlay2Mojo" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractDependencyProcessingPlay2Mojo.html">
+	c22 [label=<<table title="com.google.code.play2.plugin.AbstractDependencyProcessingPlay2Mojo" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractDependencyProcessingPlay2Mojo.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"><font face="arial italic"> AbstractDependencyProcessingPlay2Mojo </font></td></tr>
 		</table></td></tr>
 		</table>>, URL="./AbstractDependencyProcessingPlay2Mojo.html", fontname="arial", fontcolor="black", fontsize=9.0];
 	// com.google.code.play2.plugin.AbstractArchivingMojo
-	c22 [label=<<table title="com.google.code.play2.plugin.AbstractArchivingMojo" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractArchivingMojo.html">
+	c23 [label=<<table title="com.google.code.play2.plugin.AbstractArchivingMojo" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractArchivingMojo.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"><font face="arial italic"> AbstractArchivingMojo </font></td></tr>
 		</table></td></tr>
 		</table>>, URL="./AbstractArchivingMojo.html", fontname="arial", fontcolor="black", fontsize=9.0];
 	// com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo
-	c23 [label=<<table title="com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractAntJavaBasedPlay2Mojo.html">
+	c24 [label=<<table title="com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractAntJavaBasedPlay2Mojo.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"><font face="arial italic"> AbstractAntJavaBasedPlay2Mojo </font></td></tr>
 		</table></td></tr>
 		</table>>, URL="./AbstractAntJavaBasedPlay2Mojo.html", fontname="arial", fontcolor="black", fontsize=9.0];
 	// com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo.JavaRunnable
-	c24 [label=<<table title="com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo.JavaRunnable" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractAntJavaBasedPlay2Mojo.JavaRunnable.html">
+	c25 [label=<<table title="com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo.JavaRunnable" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractAntJavaBasedPlay2Mojo.JavaRunnable.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> JavaRunnable </td></tr>
 		</table></td></tr>
@@ -170,36 +176,38 @@ digraph G {
 	//com.google.code.play2.plugin.Play2RoutesCompileMojo extends com.google.code.play2.plugin.AbstractPlay2Mojo
 	c18:p -> c4:p [dir=back,arrowtail=empty];
 	//com.google.code.play2.plugin.Play2LessCompileMojo extends com.google.code.play2.plugin.AbstractPlay2AssetsCompileMojo
-	c20:p -> c5:p [dir=back,arrowtail=empty];
-	//com.google.code.play2.plugin.Play2EnhanceClassesMojo extends com.google.code.play2.plugin.AbstractPlay2Mojo
-	c18:p -> c6:p [dir=back,arrowtail=empty];
-	//com.google.code.play2.plugin.Play2EbeanEnhanceMojo extends com.google.code.play2.plugin.AbstractPlay2Mojo
-	c18:p -> c7:p [dir=back,arrowtail=empty];
+	c21:p -> c5:p [dir=back,arrowtail=empty];
+	//com.google.code.play2.plugin.Play2EnhanceClassesMojo extends com.google.code.play2.plugin.AbstractPlay2EnhanceMojo
+	c19:p -> c6:p [dir=back,arrowtail=empty];
+	//com.google.code.play2.plugin.Play2EbeanEnhanceMojo extends com.google.code.play2.plugin.AbstractPlay2EnhanceMojo
+	c19:p -> c7:p [dir=back,arrowtail=empty];
 	//com.google.code.play2.plugin.Play2DistMojo extends com.google.code.play2.plugin.AbstractPlay2DistMojo
-	c19:p -> c8:p [dir=back,arrowtail=empty];
+	c20:p -> c8:p [dir=back,arrowtail=empty];
 	//com.google.code.play2.plugin.Play2DistExplodedMojo extends com.google.code.play2.plugin.AbstractPlay2DistMojo
-	c19:p -> c9:p [dir=back,arrowtail=empty];
+	c20:p -> c9:p [dir=back,arrowtail=empty];
 	//com.google.code.play2.plugin.Play2CoffeeCompileMojo extends com.google.code.play2.plugin.AbstractPlay2AssetsCompileMojo
-	c20:p -> c10:p [dir=back,arrowtail=empty];
+	c21:p -> c10:p [dir=back,arrowtail=empty];
 	//com.google.code.play2.plugin.Play2ClosureCompileMojo extends com.google.code.play2.plugin.AbstractPlay2AssetsCompileMojo
-	c20:p -> c11:p [dir=back,arrowtail=empty];
+	c21:p -> c11:p [dir=back,arrowtail=empty];
 	//com.google.code.play2.plugin.AbstractPlay2StopServerMojo extends com.google.code.play2.plugin.AbstractPlay2Mojo
 	c18:p -> c14:p [dir=back,arrowtail=empty];
 	//com.google.code.play2.plugin.AbstractPlay2StartServerMojo extends com.google.code.play2.plugin.AbstractPlay2ServerMojo
 	c16:p -> c15:p [dir=back,arrowtail=empty];
 	//com.google.code.play2.plugin.AbstractPlay2ServerMojo extends com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo
-	c23:p -> c16:p [dir=back,arrowtail=empty];
+	c24:p -> c16:p [dir=back,arrowtail=empty];
 	//com.google.code.play2.plugin.AbstractPlay2RunMojo extends com.google.code.play2.plugin.AbstractPlay2ServerMojo
 	c16:p -> c17:p [dir=back,arrowtail=empty];
+	//com.google.code.play2.plugin.AbstractPlay2EnhanceMojo extends com.google.code.play2.plugin.AbstractPlay2Mojo
+	c18:p -> c19:p [dir=back,arrowtail=empty];
 	//com.google.code.play2.plugin.AbstractPlay2DistMojo extends com.google.code.play2.plugin.AbstractArchivingMojo
-	c22:p -> c19:p [dir=back,arrowtail=empty];
+	c23:p -> c20:p [dir=back,arrowtail=empty];
 	//com.google.code.play2.plugin.AbstractPlay2AssetsCompileMojo extends com.google.code.play2.plugin.AbstractPlay2Mojo
-	c18:p -> c20:p [dir=back,arrowtail=empty];
-	//com.google.code.play2.plugin.AbstractDependencyProcessingPlay2Mojo extends com.google.code.play2.plugin.AbstractPlay2Mojo
 	c18:p -> c21:p [dir=back,arrowtail=empty];
-	//com.google.code.play2.plugin.AbstractArchivingMojo extends com.google.code.play2.plugin.AbstractPlay2Mojo
+	//com.google.code.play2.plugin.AbstractDependencyProcessingPlay2Mojo extends com.google.code.play2.plugin.AbstractPlay2Mojo
 	c18:p -> c22:p [dir=back,arrowtail=empty];
-	//com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo extends com.google.code.play2.plugin.AbstractPlay2Mojo
+	//com.google.code.play2.plugin.AbstractArchivingMojo extends com.google.code.play2.plugin.AbstractPlay2Mojo
 	c18:p -> c23:p [dir=back,arrowtail=empty];
+	//com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo extends com.google.code.play2.plugin.AbstractPlay2Mojo
+	c18:p -> c24:p [dir=back,arrowtail=empty];
 }
 
