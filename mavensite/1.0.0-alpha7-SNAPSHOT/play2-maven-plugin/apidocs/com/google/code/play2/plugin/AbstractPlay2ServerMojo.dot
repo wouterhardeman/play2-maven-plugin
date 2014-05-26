@@ -41,18 +41,18 @@ digraph G {
 	c439:p -> c440:p [dir=back,arrowtail=empty];
 	// com.google.code.play2.plugin.AbstractPlay2StartServerMojo DEPEND org.apache.tools.ant.taskdefs.Java
 	c438:p -> c449:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// com.google.code.play2.plugin.AbstractPlay2ServerMojo DEPEND org.apache.tools.ant.Project
+	// com.google.code.play2.plugin.AbstractPlay2ServerMojo DEPEND org.apache.maven.project.MavenProject
 	c439:p -> c450:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// com.google.code.play2.plugin.AbstractPlay2ServerMojo DEPEND org.apache.tools.ant.types.Path
 	c439:p -> c451:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// com.google.code.play2.plugin.AbstractPlay2ServerMojo DEPEND org.apache.tools.ant.taskdefs.Java
 	c439:p -> c449:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// com.google.code.play2.plugin.AbstractPlay2ServerMojo DEPEND org.apache.maven.project.MavenProject
+	// com.google.code.play2.plugin.AbstractPlay2ServerMojo DEPEND org.apache.tools.ant.Project
 	c439:p -> c452:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo DEPEND org.apache.tools.ant.Project
-	c447:p -> c450:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo DEPEND org.apache.tools.ant.taskdefs.Java
 	c447:p -> c449:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// com.google.code.play2.plugin.AbstractAntJavaBasedPlay2Mojo DEPEND org.apache.tools.ant.Project
+	c447:p -> c452:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// org.apache.tools.ant.taskdefs.Java
 	c449 [label=<<table title="org.apache.tools.ant.taskdefs.Java" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://maven-play-plugin.googlecode.com/svn/apidocs/org/apache/ant/ant/1.9.0/org/apache/tools/ant/taskdefs/Java.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
@@ -61,7 +61,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="http://maven-play-plugin.googlecode.com/svn/apidocs/org/apache/ant/ant/1.9.0/org/apache/tools/ant/taskdefs/Java.html", fontname="arial", fontcolor="black", fontsize=9.0];
 	// org.apache.tools.ant.Project
-	c450 [label=<<table title="org.apache.tools.ant.Project" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://maven-play-plugin.googlecode.com/svn/apidocs/org/apache/ant/ant/1.9.0/org/apache/tools/ant/Project.html">
+	c452 [label=<<table title="org.apache.tools.ant.Project" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://maven-play-plugin.googlecode.com/svn/apidocs/org/apache/ant/ant/1.9.0/org/apache/tools/ant/Project.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> Project </td></tr>
 <tr><td align="center" balign="center"><font point-size="7.0"> org.apache.tools.ant </font></td></tr>
@@ -75,7 +75,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="http://maven-play-plugin.googlecode.com/svn/apidocs/org/apache/ant/ant/1.9.0/org/apache/tools/ant/types/Path.html", fontname="arial", fontcolor="black", fontsize=9.0];
 	// org.apache.maven.project.MavenProject
-	c452 [label=<<table title="org.apache.maven.project.MavenProject" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://maven.apache.org/ref/2.2.1/maven-project/apidocs/org/apache/maven/project/MavenProject.html">
+	c450 [label=<<table title="org.apache.maven.project.MavenProject" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://maven.apache.org/ref/2.2.1/maven-project/apidocs/org/apache/maven/project/MavenProject.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> MavenProject </td></tr>
 <tr><td align="center" balign="center"><font point-size="7.0"> org.apache.maven.project </font></td></tr>
