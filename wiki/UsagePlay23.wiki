@@ -26,26 +26,15 @@ Simplest project (pom.xml file) should look like:
         </repository>
     </repositories>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>sonatype-nexus-snapshots</id>
-            <name>Sonatype Nexus Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </pluginRepository>
-    </pluginRepositories>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <play2.version>2.3.0-RC1</play2.version>
+        <play2.version>2.3.0</play2.version>
         <scala.version>2.10.4</scala.version>
 
-        <play2.plugin.version>1.0.0-alpha7-SNAPSHOT</play2.plugin.version>
-        <sbt-compiler.plugin.version>1.0.0-beta4-SNAPSHOT</sbt-compiler.plugin.version>
+        <play2.plugin.version>1.0.0-alpha7</play2.plugin.version>
+        <sbt-compiler.plugin.version>1.0.0-beta4</sbt-compiler.plugin.version>
     </properties>
 
     <dependencies>
@@ -114,26 +103,15 @@ Example with optional dependencies and configuration options:
         </repository>
     </repositories>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>sonatype-nexus-snapshots</id>
-            <name>Sonatype Nexus Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </pluginRepository>
-    </pluginRepositories>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <play2.version>2.3.0-RC1</play2.version>
+        <play2.version>2.3.0</play2.version>
         <scala.version>2.10.4</scala.version>
 
-        <play2.plugin.version>1.0.0-alpha7-SNAPSHOT</play2.plugin.version>
-        <sbt-compiler.plugin.version>1.0.0-beta4-SNAPSHOT</sbt-compiler.plugin.version>
+        <play2.plugin.version>1.0.0-alpha7</play2.plugin.version>
+        <sbt-compiler.plugin.version>1.0.0-beta4</sbt-compiler.plugin.version>
     </properties>
 
     <dependencies>
@@ -286,4 +264,4 @@ to
         </dependency>
 }}}
 
-For more sample projects go to [http://play2-maven-plugin.googlecode.com/svn/trunk/test-projects/play23/ Play! 2.3.x test projects].
+For more sample projects go to [http://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-alpha7/play23/ Play! 2.3.x test projects].
