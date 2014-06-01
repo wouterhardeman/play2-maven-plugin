@@ -241,7 +241,7 @@ with
 c) replace any
 {{{
         <dependency>
-            <groupId>com.typesafe.play</groupId>
+            <groupId>play</groupId>
             <artifactId>play-xxxx_${play2-scala.version}</artifactId>
             <version>${play2.version}</version>
         </dependency>
@@ -249,7 +249,7 @@ c) replace any
 dependency with
 {{{
         <dependency>
-            <groupId>play</groupId>
+            <groupId>com.typesafe.play</groupId>
             <artifactId>play-xxxx_${play2-scala.version}</artifactId>
             <version>${play2.version}</version>
         </dependency>
