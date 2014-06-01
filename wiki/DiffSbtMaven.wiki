@@ -4,6 +4,8 @@
 
 1.
 
+<font color="red"><strong>Only in Play! 2.1.x and 2.2.x</strong></font>
+
 It seems (I didn't check it in documentation) that in SBT dependency versions resolution for "compile" and "test" scopes is independent.
 
 I mean, different versions of the same dependency can be selected for these two scopes.
