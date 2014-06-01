@@ -3,13 +3,13 @@
 <html lang="pl">
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-<title>AbstractPlay2EnhanceMojo (Play! 2.x Maven Plugin 1.0.0-alpha7-SNAPSHOT API)</title>
+<title>AbstractPlay2EnhanceMojo (Play! 2.x Maven Plugin 1.0.0-alpha7 API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="AbstractPlay2EnhanceMojo (Play! 2.x Maven Plugin 1.0.0-alpha7-SNAPSHOT API)";
+        parent.document.title="AbstractPlay2EnhanceMojo (Play! 2.x Maven Plugin 1.0.0-alpha7 API)";
     }
 //-->
 </script>
@@ -91,8 +91,9 @@
 <area shape="rect" id="c359" href="http://maven.apache.org/ref/2.2.1/maven-project/apidocs/org/apache/maven/project/MavenProject.html" title="org.apache.maven.project.MavenProject" alt="" coords="16,210,144,246"/>
 <area shape="rect" id="node9" href="http://maven.apache.org/ref/2.2.1/maven-project/apidocs/org/apache/maven/project/MavenProject.html" title="&lt;TABLE&gt;" alt="" coords="5,204,155,252"/>
 <area shape="rect" id="c361" href="http://maven.apache.org/ref/2.2.1/maven-artifact/apidocs/org/apache/maven/artifact/Artifact.html" title="org.apache.maven.artifact.Artifact" alt="" coords="813,203,942,253"/>
-<area shape="rect" id="node14" href="http://maven.apache.org/ref/2.2.1/maven-artifact/apidocs/org/apache/maven/artifact/Artifact.html" title="&lt;TABLE&gt;" alt="" coords="803,197,952,259"/>
-<area shape="rect" id="node11" href="null" title="&lt;TABLE&gt;" alt="" coords="600,197,779,259"/>
+<area shape="rect" id="node13" href="http://maven.apache.org/ref/2.2.1/maven-artifact/apidocs/org/apache/maven/artifact/Artifact.html" title="&lt;TABLE&gt;" alt="" coords="803,197,952,259"/>
+<area shape="rect" id="c360" href="http://sbt-compiler-maven-plugin.googlecode.com/svn/mavensite/1.0.0-beta4/sbt-compiler-api/apidocs/com/google/code/sbt/compiler/api/AnalysisProcessor.html" title="com.google.code.sbt.compiler.api.AnalysisProcessor" alt="" coords="610,203,769,253"/>
+<area shape="rect" id="node11" href="http://sbt-compiler-maven-plugin.googlecode.com/svn/mavensite/1.0.0-beta4/sbt-compiler-api/apidocs/com/google/code/sbt/compiler/api/AnalysisProcessor.html" title="&lt;TABLE&gt;" alt="" coords="600,197,779,259"/>
 </map>
 <!-- UML diagram added by UMLGraph version R5_6-24-gf6e263 (http://www.umlgraph.org/) -->
 <div align="center"><img src="AbstractPlay2EnhanceMojo.png" alt="Package class diagram package AbstractPlay2EnhanceMojo" usemap="#G" border=0/></div>
@@ -208,7 +209,7 @@ extends <a href="../../../../../com/google/code/play2/plugin/AbstractPlay2Mojo.h
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected com.google.code.sbt.compiler.api.AnalysisProcessor</code></td>
+<td class="colFirst"><code>protected <a href="http://sbt-compiler-maven-plugin.googlecode.com/svn/mavensite/1.0.0-beta4/sbt-compiler-api/apidocs/com/google/code/sbt/compiler/api/AnalysisProcessor.html?is-external=true" title="class or interface in com.google.code.sbt.compiler.api">AnalysisProcessor</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/code/play2/plugin/AbstractPlay2EnhanceMojo.html#getSbtAnalysisProcessor()">getSbtAnalysisProcessor</a></strong>()</code>&nbsp;</td>
 </tr>
 </table>
@@ -261,18 +262,18 @@ protected&nbsp;<a href="http://docs.oracle.com/javase/1.6.0/docs/api/java/lang/S
  There are three cases possible:
  <ul>
  <li>
- If <a href="../../../../../com/google/code/play2/plugin/AbstractPlay2EnhanceMojo.html#sbtVersion"><code>sbtVersion</code></a> is specified, compatible <code>Compiler</code> implementation
+ If <a href="../../../../../com/google/code/play2/plugin/AbstractPlay2EnhanceMojo.html#sbtVersion"><code>sbtVersion</code></a> is specified, compatible <a href="http://sbt-compiler-maven-plugin.googlecode.com/svn/mavensite/1.0.0-beta4/sbt-compiler-api/apidocs/com/google/code/sbt/compiler/api/Compiler.html?is-external=true" title="class or interface in com.google.code.sbt.compiler.api"><code>Compiler</code></a> implementation
  is selected and configured to use <a href="../../../../../com/google/code/play2/plugin/AbstractPlay2EnhanceMojo.html#sbtVersion"><code>sbtVersion</code></a> SBT version for compilation.
  </li>
  <li>
  If <a href="../../../../../com/google/code/play2/plugin/AbstractPlay2EnhanceMojo.html#sbtVersion"><code>sbtVersion</code></a> is not specified, and <a href="../../../../../com/google/code/play2/plugin/AbstractPlay2Mojo.html#playVersion"><code>AbstractPlay2Mojo.playVersion</code></a> is specified
- <a href="../../../../../com/google/code/play2/plugin/AbstractPlay2Mojo.html#playVersion"><code>AbstractPlay2Mojo.playVersion</code></a> parameter value is used to indirectly select compatible <code>Compiler</code> implementation
- and it's <code>Compiler.getDefaultSbtVersion()</code> SBT version used for compilation.
+ <a href="../../../../../com/google/code/play2/plugin/AbstractPlay2Mojo.html#playVersion"><code>AbstractPlay2Mojo.playVersion</code></a> parameter value is used to indirectly select compatible <a href="http://sbt-compiler-maven-plugin.googlecode.com/svn/mavensite/1.0.0-beta4/sbt-compiler-api/apidocs/com/google/code/sbt/compiler/api/Compiler.html?is-external=true" title="class or interface in com.google.code.sbt.compiler.api"><code>Compiler</code></a> implementation
+ and it's <a href="http://sbt-compiler-maven-plugin.googlecode.com/svn/mavensite/1.0.0-beta4/sbt-compiler-api/apidocs/com/google/code/sbt/compiler/api/Compiler.html?is-external=true#getDefaultSbtVersion()" title="class or interface in com.google.code.sbt.compiler.api"><code>Compiler.getDefaultSbtVersion()</code></a> SBT version used for compilation.
  </li>
  <li>
  If both <a href="../../../../../com/google/code/play2/plugin/AbstractPlay2EnhanceMojo.html#sbtVersion"><code>sbtVersion</code></a> and <a href="../../../../../com/google/code/play2/plugin/AbstractPlay2Mojo.html#playVersion"><code>AbstractPlay2Mojo.playVersion</code></a> are not specified
- the most recent <code>Compiler</code> implementation is selected
- and it's <code>Compiler.getDefaultSbtVersion()</code> SBT version used for compilation.
+ the most recent <a href="http://sbt-compiler-maven-plugin.googlecode.com/svn/mavensite/1.0.0-beta4/sbt-compiler-api/apidocs/com/google/code/sbt/compiler/api/Compiler.html?is-external=true" title="class or interface in com.google.code.sbt.compiler.api"><code>Compiler</code></a> implementation is selected
+ and it's <a href="http://sbt-compiler-maven-plugin.googlecode.com/svn/mavensite/1.0.0-beta4/sbt-compiler-api/apidocs/com/google/code/sbt/compiler/api/Compiler.html?is-external=true#getDefaultSbtVersion()" title="class or interface in com.google.code.sbt.compiler.api"><code>Compiler.getDefaultSbtVersion()</code></a> SBT version used for compilation.
  </li>
  </ul></div>
 <dl><dt><span class="strong">Since:</span></dt>
@@ -310,8 +311,8 @@ protected&nbsp;<a href="http://docs.oracle.com/javase/1.6.0/docs/api/java/lang/S
 <ul class="blockList">
 <li class="blockList">
 <h4>getSbtAnalysisProcessor</h4>
-<pre>protected&nbsp;com.google.code.sbt.compiler.api.AnalysisProcessor&nbsp;getSbtAnalysisProcessor()
-                                                                              throws <a href="http://maven.apache.org/ref/2.2.1/maven-plugin-api/apidocs/org/apache/maven/plugin/MojoExecutionException.html?is-external=true" title="class or interface in org.apache.maven.plugin">MojoExecutionException</a></pre>
+<pre>protected&nbsp;<a href="http://sbt-compiler-maven-plugin.googlecode.com/svn/mavensite/1.0.0-beta4/sbt-compiler-api/apidocs/com/google/code/sbt/compiler/api/AnalysisProcessor.html?is-external=true" title="class or interface in com.google.code.sbt.compiler.api">AnalysisProcessor</a>&nbsp;getSbtAnalysisProcessor()
+                                             throws <a href="http://maven.apache.org/ref/2.2.1/maven-plugin-api/apidocs/org/apache/maven/plugin/MojoExecutionException.html?is-external=true" title="class or interface in org.apache.maven.plugin">MojoExecutionException</a></pre>
 <dl><dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://maven.apache.org/ref/2.2.1/maven-plugin-api/apidocs/org/apache/maven/plugin/MojoExecutionException.html?is-external=true" title="class or interface in org.apache.maven.plugin">MojoExecutionException</a></code></dd></dl>
 </li>
