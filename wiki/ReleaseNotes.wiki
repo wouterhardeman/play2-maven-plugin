@@ -2,6 +2,10 @@
 
 Release notes:
 
+* 1.0.0-alpha7 (2014.06.01)
+
+For detailed information about all fixed issues see this [http://code.google.com/p/play2-maven-plugin/issues/list?can=1&q=label%3AMilestone-1.0.0-alpha7%20status%3AFixed issues page].
+
 * 1.0.0-alpha6 (2014.04.10)
 
 Most important changes in this release:
