@@ -56,6 +56,25 @@ to your play2 project or better add
 }}}
 to ~/.m2/settings.xml file. More info: http://maven.apache.org/guides/mini/guide-multiple-repositories.html
 
+*1.0.0-alpha6 to 1.0.0-alpha7 migration*
+
+Just change plugin versions from
+{{{
+    <properties>
+        ...
+        <play2.plugin.version>1.0.0-alpha6</play2.plugin.version>
+        <sbt-compiler.plugin.version>1.0.0-beta3</sbt-compiler.plugin.version>
+    </properties>
+}}}
+to
+{{{
+    <properties>
+        ...
+        <play2.plugin.version>1.0.0-alpha7</play2.plugin.version>
+        <sbt-compiler.plugin.version>1.0.0-beta4</sbt-compiler.plugin.version>
+    </properties>
+}}}
+
 *1.0.0-alpha5 to 1.0.0-alpha6 migration*
 
 Remove provider from plugin's dependencies (provider auto-discovery mechanism will add this dependency automatically).
