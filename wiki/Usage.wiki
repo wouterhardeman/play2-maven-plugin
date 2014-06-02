@@ -201,6 +201,26 @@ with
             </plugin>
 }}}
 
+* Play! 2.2.x to Play! 2.3.x migration*
+
+In your play2 project change Play! (and optionally Scala) version from
+
+{{{
+    <properties>
+        ...
+        <play2.version>2.2.3</play2.version>
+        <scala.version>2.10.3</scala.version>
+    </properties>
+}}}
+to
+{{{
+    <properties>
+        ...
+        <play2.version>2.3.0</play2.version>
+        <scala.version>2.10.4</scala.version>
+    </properties>
+}}}
+
 * Play! 2.1.x to Play! 2.2.x migration*
 
 In your play2 project: 
