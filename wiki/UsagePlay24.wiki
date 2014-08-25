@@ -13,7 +13,7 @@ Simplest project (pom.xml file) should look like:
     <version>1.0.0-SNAPSHOT</version>
     <packaging>play2</packaging>
 
-    <name>Play! Framework 2.3.x Maven Test Project</name>
+    <name>Play! Framework 2.4.x Maven Test Project</name>
 
     <repositories>
         <repository>
@@ -30,10 +30,10 @@ Simplest project (pom.xml file) should look like:
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <play2.version>2.3.0</play2.version>
+        <play2.version>2.4.0-M1</play2.version>
         <scala.version>2.10.4</scala.version>
 
-        <play2.plugin.version>1.0.0-alpha7</play2.plugin.version>
+        <play2.plugin.version>1.0.0-alpha8</play2.plugin.version>
         <sbt-compiler.plugin.version>1.0.0-beta4</sbt-compiler.plugin.version>
     </properties>
 
@@ -47,6 +47,13 @@ Simplest project (pom.xml file) should look like:
         <dependency>
             <groupId>com.typesafe.play</groupId>
             <artifactId>play_2.10</artifactId>
+            <version>${play2.version}</version>
+        </dependency>
+
+        <!-- required for: "run", "start" and "dist" -->
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-netty-server_2.10</artifactId>
             <version>${play2.version}</version>
         </dependency>
     </dependencies>
@@ -90,7 +97,7 @@ Example with optional dependencies and configuration options:
     <version>1.0.0-SNAPSHOT</version>
     <packaging>play2</packaging>
 
-    <name>Play! Framework 2.3.x Maven Test Project</name>
+    <name>Play! Framework 2.4.x Maven Test Project</name>
 
     <repositories>
         <repository>
@@ -107,10 +114,10 @@ Example with optional dependencies and configuration options:
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <play2.version>2.3.0</play2.version>
+        <play2.version>2.4.0-M1</play2.version>
         <scala.version>2.10.4</scala.version>
 
-        <play2.plugin.version>1.0.0-alpha7</play2.plugin.version>
+        <play2.plugin.version>1.0.0-alpha8</play2.plugin.version>
         <sbt-compiler.plugin.version>1.0.0-beta4</sbt-compiler.plugin.version>
     </properties>
 
@@ -124,6 +131,13 @@ Example with optional dependencies and configuration options:
         <dependency>
             <groupId>com.typesafe.play</groupId>
             <artifactId>play_2.10</artifactId>
+            <version>${play2.version}</version>
+        </dependency>
+
+        <!-- required for: "run", "start" and "dist" -->
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-netty-server_2.10</artifactId>
             <version>${play2.version}</version>
         </dependency>
 
@@ -264,4 +278,4 @@ to
         </dependency>
 }}}
 
-For more sample projects go to [http://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-alpha7/play23/ Play! 2.3.x test projects].
+For more example projects go to [http://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-alpha8/play24/ Play! 2.4.x test projects].
