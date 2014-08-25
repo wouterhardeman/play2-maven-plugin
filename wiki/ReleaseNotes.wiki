@@ -6,7 +6,7 @@ Release notes:
 
 Most important changes in this release:
 
-- Play! 2.4.x support,
+- Play! 2.4.x support ([http://code.google.com/p/play2-maven-plugin/issues/detail?id=43 Issue 43]),
 
 - Ebean enhancement fix ([http://code.google.com/p/play2-maven-plugin/issues/detail?id=39 Issue 39])
 
