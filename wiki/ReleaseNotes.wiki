@@ -2,6 +2,16 @@
 
 Release notes:
 
+* 1.0.0-alpha8 (2014.08.24)
+
+Most important changes in this release:
+
+- Play! 2.4.x support,
+
+- Ebean enhancement fix
+
+For detailed information about all fixed issues see this [http://code.google.com/p/play2-maven-plugin/issues/list?can=1&q=label%3AMilestone-1.0.0-alpha8%20status%3AFixed issues page].
+
 * 1.0.0-alpha7 (2014.06.01)
 
 Most important changes in this release:
