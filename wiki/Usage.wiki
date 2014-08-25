@@ -222,10 +222,37 @@ with
             </plugin>
 }}}
 
+* Play! 2.3.x to Play! 2.4.x migration*
+
+In your play2 project
+
+a) change Play! version from
+{{{
+    <properties>
+        ...
+        <play2.version>2.3.3</play2.version>
+    </properties>
+}}}
+to
+{{{
+    <properties>
+        ...
+        <play2.version>2.4.0-M1</play2.version>
+    </properties>
+}}}
+
+b) add new dependency
+{{{
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-netty-server_2.10</artifactId>
+            <version>${play2.version}</version>
+        </dependency>
+}}}
+
 * Play! 2.2.x to Play! 2.3.x migration*
 
 In your play2 project change Play! (and optionally Scala) version from
-
 {{{
     <properties>
         ...
@@ -244,9 +271,9 @@ to
 
 * Play! 2.1.x to Play! 2.2.x migration*
 
-In your play2 project: 
+In your play2 project
 
-a) change property values
+a) change Play! (and optionally Scala) version from
 {{{
     <properties>
         ...
@@ -263,40 +290,7 @@ to
     </properties>
 }}}
 
-b) replace
-{{{
-            <plugin>
-                <groupId>com.google.code.play2-maven-plugin</groupId>
-                <artifactId>play2-maven-plugin</artifactId>
-                <version>${play2.plugin.version}</version>
-                <extensions>true</extensions>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.google.code.play2-maven-plugin</groupId>
-                        <artifactId>play2-provider-play21</artifactId>
-                        <version>${play2.plugin.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-}}}
-with
-{{{
-            <plugin>
-                <groupId>com.google.code.play2-maven-plugin</groupId>
-                <artifactId>play2-maven-plugin</artifactId>
-                <version>${play2.plugin.version}</version>
-                <extensions>true</extensions>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.google.code.play2-maven-plugin</groupId>
-                        <artifactId>play2-provider-play22</artifactId>
-                        <version>${play2.plugin.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-}}}
-
-c) replace any
+b) change "groupId" of all Play! dependencies from "play" 
 {{{
         <dependency>
             <groupId>play</groupId>
@@ -304,7 +298,7 @@ c) replace any
             <version>${play2.version}</version>
         </dependency>
 }}}
-dependency with
+to "com.typesafe.play"
 {{{
         <dependency>
             <groupId>com.typesafe.play</groupId>
