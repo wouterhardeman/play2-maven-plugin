@@ -6,7 +6,7 @@ Adding WAR packaging is actually very simple process, slightly different for ser
 
 == Servlet 2.5 ==
 
-Add *war/WEB-INF/web.xml* file to your project containing:
+Add to your project *war/WEB-INF/web.xml* file containing:
 {{{
 <?xml version="1.0" ?>
 <web-app xmlns="http://java.sun.com/xml/ns/javaee"
