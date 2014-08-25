@@ -1,4 +1,4 @@
-#summary Plugin configuration for project using Play! Framework 2.3.x
+#summary Plugin configuration for project using Play! Framework 2.4.x
 
 Simplest project (pom.xml file) should look like:
 
