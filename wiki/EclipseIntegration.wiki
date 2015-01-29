@@ -6,7 +6,7 @@ To import Maven project with *play2* packaging into Eclipse IDE *1.0.0-alpha6* o
 
 Use Scala IDE bundle (http://scala-ide.org/download/sdk.html) or install Scala IDE plugin from it's update site.
 
-*Don't use Eclipse 4.4* (Luna), Scala IDE is not compatible with this Eclipse version yet.
+*Don't use Eclipse 4.5* (Mars), Scala IDE is not compatible with this Eclipse version yet.
 
 There is one problem with importing Play! project to Eclipse (as Maven project).
 M2Eclipse does not treat such project as Java project, because *maven-compiler-plugin*'s *compile* and *testCompile*
