@@ -10,17 +10,17 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// com.google.code.play2.provider.play24.Play24LessCompiler
-	c152 [label=<<table title="com.google.code.play2.provider.play24.Play24LessCompiler" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Play24LessCompiler.html">
+	c153 [label=<<table title="com.google.code.play2.provider.play24.Play24LessCompiler" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Play24LessCompiler.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> Play24LessCompiler </td></tr>
 		</table></td></tr>
 		</table>>, URL="./Play24LessCompiler.html", fontname="arial", fontcolor="black", fontsize=9.0];
 	//com.google.code.play2.provider.play24.Play24LessCompiler implements com.google.code.play2.provider.api.Play2LessCompiler
-	c160:p -> c152:p [dir=back,arrowtail=empty,style=dashed];
+	c161:p -> c153:p [dir=back,arrowtail=empty,style=dashed];
 	// com.google.code.play2.provider.play24.Play24LessCompiler DEPEND com.google.code.play2.provider.api.LessCompilationResult
-	c152:p -> c161:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c153:p -> c162:p [taillabel="", label="", headlabel="", fontname="arial", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// com.google.code.play2.provider.api.Play2LessCompiler
-	c160 [label=<<table title="com.google.code.play2.provider.api.Play2LessCompiler" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="https://play2-maven-plugin.googlecode.com/svn/mavensite/1.0.0-beta1-SNAPSHOT/play2-provider-api/apidocs/com/google/code/play2/provider/api/Play2LessCompiler.html">
+	c161 [label=<<table title="com.google.code.play2.provider.api.Play2LessCompiler" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="https://play2-maven-plugin.googlecode.com/svn/mavensite/1.0.0-beta1-SNAPSHOT/play2-provider-api/apidocs/com/google/code/play2/provider/api/Play2LessCompiler.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> Play2LessCompiler </td></tr>
@@ -28,7 +28,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="https://play2-maven-plugin.googlecode.com/svn/mavensite/1.0.0-beta1-SNAPSHOT/play2-provider-api/apidocs/com/google/code/play2/provider/api/Play2LessCompiler.html", fontname="arial", fontcolor="black", fontsize=9.0];
 	// com.google.code.play2.provider.api.LessCompilationResult
-	c161 [label=<<table title="com.google.code.play2.provider.api.LessCompilationResult" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="https://play2-maven-plugin.googlecode.com/svn/mavensite/1.0.0-beta1-SNAPSHOT/play2-provider-api/apidocs/com/google/code/play2/provider/api/LessCompilationResult.html">
+	c162 [label=<<table title="com.google.code.play2.provider.api.LessCompilationResult" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="https://play2-maven-plugin.googlecode.com/svn/mavensite/1.0.0-beta1-SNAPSHOT/play2-provider-api/apidocs/com/google/code/play2/provider/api/LessCompilationResult.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> LessCompilationResult </td></tr>
