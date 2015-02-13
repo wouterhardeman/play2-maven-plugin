@@ -30,10 +30,10 @@ Simplest project (pom.xml file) should look like:
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <play2.version>2.2.5</play2.version>
+        <play2.version>2.2.6</play2.version>
         <scala.version>2.10.4</scala.version>
 
-        <play2.plugin.version>1.0.0-alpha9</play2.plugin.version>
+        <play2.plugin.version>1.0.0-beta1</play2.plugin.version>
         <sbt-compiler.plugin.version>1.0.0-beta5</sbt-compiler.plugin.version>
     </properties>
 
@@ -105,10 +105,10 @@ Example with optional dependencies and configuration options:
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <play2.version>2.2.5</play2.version>
+        <play2.version>2.2.6</play2.version>
         <scala.version>2.10.4</scala.version>
 
-        <play2.plugin.version>1.0.0-alpha9</play2.plugin.version>
+        <play2.plugin.version>1.0.0-beta1</play2.plugin.version>
         <sbt-compiler.plugin.version>1.0.0-beta5</sbt-compiler.plugin.version>
     </properties>
 
@@ -222,4 +222,4 @@ Example with optional dependencies and configuration options:
 </project>
 }}}
 
-For more example projects go to [http://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-alpha9/play22/ Play! 2.2.x test projects].
+For more example projects go to [http://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-beta1/play22/ Play! 2.2.x test projects].
