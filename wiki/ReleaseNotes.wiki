@@ -2,6 +2,14 @@
 
 Release notes:
 
+* 1.0.0-beta1 (2015.02.13)
+
+For detailed information about all fixed issues see this [http://code.google.com/p/play2-maven-plugin/issues/list?can=1&q=label%3AMilestone-1.0.0-beta1%20status%3AFixed issues page].
+
+* 1.0.0-alpha9 (2014.11.15)
+
+For detailed information about all fixed issues see this [http://code.google.com/p/play2-maven-plugin/issues/list?can=1&q=label%3AMilestone-1.0.0-alpha9%20status%3AFixed issues page].
+
 * 1.0.0-alpha8 (2014.08.24)
 
 Most important changes in this release:
