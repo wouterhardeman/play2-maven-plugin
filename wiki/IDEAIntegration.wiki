@@ -56,7 +56,6 @@ http://play2-maven-plugin.googlecode.com/svn/wiki/images/idea/imp9.PNG
 
 Select Scala support and click *OK*
 
-Now your project is ready for building.
 
 
-Have a nice day :)
+That's all. Have a nice day :)
