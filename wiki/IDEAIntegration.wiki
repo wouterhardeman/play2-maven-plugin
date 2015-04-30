@@ -30,7 +30,7 @@ When import process finishes, the project looks like on the image below.
 
 http://play2-maven-plugin.googlecode.com/svn/wiki/images/idea/imp5.PNG
 
-As you can see, there is no *target* folder. ...The project is treated as any other Java project. Eclipse Java compiler (JDT) cannot compile Scala code and fails with huge amount of compilation errors.
+It requires two additional configuration steps.
 
 === 2. Configure project after import ===
 
