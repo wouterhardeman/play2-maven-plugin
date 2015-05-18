@@ -10,26 +10,26 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// com.google.code.play2.provider.api.TemplateCompilationException
-	c261 [label=<<table title="com.google.code.play2.provider.api.TemplateCompilationException" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./TemplateCompilationException.html">
+	c294 [label=<<table title="com.google.code.play2.provider.api.TemplateCompilationException" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./TemplateCompilationException.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> TemplateCompilationException </td></tr>
 		</table></td></tr>
 		</table>>, URL="./TemplateCompilationException.html", fontname="arial", fontcolor="black", fontsize=9.0];
 	// com.google.code.play2.provider.api.SourceGenerationException
-	c262 [label=<<table title="com.google.code.play2.provider.api.SourceGenerationException" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SourceGenerationException.html">
+	c295 [label=<<table title="com.google.code.play2.provider.api.SourceGenerationException" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SourceGenerationException.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> SourceGenerationException </td></tr>
 		</table></td></tr>
 		</table>>, URL="./SourceGenerationException.html", fontname="arial", fontcolor="black", fontsize=9.0];
 	// com.google.code.play2.provider.api.RoutesCompilationException
-	c263 [label=<<table title="com.google.code.play2.provider.api.RoutesCompilationException" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./RoutesCompilationException.html">
+	c296 [label=<<table title="com.google.code.play2.provider.api.RoutesCompilationException" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./RoutesCompilationException.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> RoutesCompilationException </td></tr>
 		</table></td></tr>
 		</table>>, URL="./RoutesCompilationException.html", fontname="arial", fontcolor="black", fontsize=9.0];
 	//com.google.code.play2.provider.api.TemplateCompilationException extends com.google.code.play2.provider.api.SourceGenerationException
-	c262:p -> c261:p [dir=back,arrowtail=empty];
+	c295:p -> c294:p [dir=back,arrowtail=empty];
 	//com.google.code.play2.provider.api.RoutesCompilationException extends com.google.code.play2.provider.api.SourceGenerationException
-	c262:p -> c263:p [dir=back,arrowtail=empty];
+	c295:p -> c296:p [dir=back,arrowtail=empty];
 }
 

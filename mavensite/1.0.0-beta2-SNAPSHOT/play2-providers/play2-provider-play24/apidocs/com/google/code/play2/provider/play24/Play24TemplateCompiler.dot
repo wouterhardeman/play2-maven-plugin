@@ -10,15 +10,15 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// com.google.code.play2.provider.play24.Play24TemplateCompiler
-	c207 [label=<<table title="com.google.code.play2.provider.play24.Play24TemplateCompiler" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Play24TemplateCompiler.html">
+	c234 [label=<<table title="com.google.code.play2.provider.play24.Play24TemplateCompiler" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Play24TemplateCompiler.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> Play24TemplateCompiler </td></tr>
 		</table></td></tr>
 		</table>>, URL="./Play24TemplateCompiler.html", fontname="arial", fontcolor="black", fontsize=9.0];
 	//com.google.code.play2.provider.play24.Play24TemplateCompiler implements com.google.code.play2.provider.api.Play2TemplateCompiler
-	c218:p -> c207:p [dir=back,arrowtail=empty,style=dashed];
+	c246:p -> c234:p [dir=back,arrowtail=empty,style=dashed];
 	// com.google.code.play2.provider.api.Play2TemplateCompiler
-	c218 [label=<<table title="com.google.code.play2.provider.api.Play2TemplateCompiler" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p">
+	c246 [label=<<table title="com.google.code.play2.provider.api.Play2TemplateCompiler" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> Play2TemplateCompiler </td></tr>

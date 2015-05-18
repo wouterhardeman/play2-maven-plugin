@@ -10,7 +10,7 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// com.google.code.play2.provider.api.Play2Providers
-	c202 [label=<<table title="com.google.code.play2.provider.api.Play2Providers" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Play2Providers.html">
+	c215 [label=<<table title="com.google.code.play2.provider.api.Play2Providers" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Play2Providers.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> Play2Providers </td></tr>
 		</table></td></tr>

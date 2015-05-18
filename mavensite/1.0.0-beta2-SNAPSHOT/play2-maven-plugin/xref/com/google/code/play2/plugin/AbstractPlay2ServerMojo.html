@@ -67,7 +67,7 @@
 <a class="jxr_linenumber" name="L59" href="#L59">59</a>      @Parameter( property = <span class="jxr_string">"play2.serverJvmArgs"</span>, defaultValue = <span class="jxr_string">""</span> )
 <a class="jxr_linenumber" name="L60" href="#L60">60</a>      <strong class="jxr_keyword">private</strong> String serverJvmArgs;
 <a class="jxr_linenumber" name="L61" href="#L61">61</a>  
-<a class="jxr_linenumber" name="L62" href="#L62">62</a>      <strong class="jxr_keyword">protected</strong> Java prepareAntJavaTask( <strong class="jxr_keyword">boolean</strong> fork )
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>      <strong class="jxr_keyword">protected</strong> Java prepareAntJavaTask( String mainClassName, <strong class="jxr_keyword">boolean</strong> fork )
 <a class="jxr_linenumber" name="L63" href="#L63">63</a>          <strong class="jxr_keyword">throws</strong> MojoExecutionException
 <a class="jxr_linenumber" name="L64" href="#L64">64</a>      {
 <a class="jxr_linenumber" name="L65" href="#L65">65</a>          File baseDir = project.getBasedir();
@@ -78,7 +78,7 @@
 <a class="jxr_linenumber" name="L70" href="#L70">70</a>          Java javaTask = <strong class="jxr_keyword">new</strong> Java();
 <a class="jxr_linenumber" name="L71" href="#L71">71</a>          javaTask.setTaskName( <span class="jxr_string">"play"</span> );
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>          javaTask.setProject( antProject );
-<a class="jxr_linenumber" name="L73" href="#L73">73</a>          javaTask.setClassname( <span class="jxr_string">"play.core.server.NettyServer"</span> );
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>          javaTask.setClassname( mainClassName );
 <a class="jxr_linenumber" name="L74" href="#L74">74</a>          javaTask.setClasspath( classPath );
 <a class="jxr_linenumber" name="L75" href="#L75">75</a>          javaTask.setFork( fork );
 <a class="jxr_linenumber" name="L76" href="#L76">76</a>          <strong class="jxr_keyword">if</strong> ( fork )
