@@ -287,7 +287,7 @@ a) change Play! version from
 {{{
     <properties>
         ...
-        <play2.version>2.3.8</play2.version>
+        <play2.version>2.3.9</play2.version>
     </properties>
 }}}
 to
@@ -298,13 +298,81 @@ to
     </properties>
 }}}
 
-b) add new dependency
+b) add dependency
 {{{
         <dependency>
             <groupId>com.typesafe.play</groupId>
             <artifactId>play-netty-server_2.10</artifactId>
             <version>${play2.version}</version>
         </dependency>
+}}}
+
+c) if using Specs2 tests add dependency
+{{{
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-specs2_2.11</artifactId>
+            <version>${play2.version}</version>
+            <scope>test</scope>
+        </dependency>
+}}}
+and repository definition
+{{{
+    <!-- 'com.typesafe.play:play-specs2_2.11' depends on
+         'org.scalaz.stream:scalaz-stream_2.11:0.7a:jar'
+         and this artifact is not available in Maven central repository yet,
+         see https://github.com/scalaz/scalaz-stream/issues/258 -->
+    <repositories>
+        <repository>
+            <id>scalaz-bintray</id>
+            <name>Scalaz Bintray - releases</name>
+            <url>https://dl.bintray.com/scalaz/releases/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+}}}
+
+d) if using JDBC evolutions add dependency
+{{{
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-jdbc-evolutions_2.11</artifactId>
+            <version>${play2.version}</version>
+        </dependency>
+}}}
+
+e) if using Ebean change
+{{{
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-java-ebean_2.11</artifactId>
+            <version>${play2.version}</version>
+        </dependency>
+}}}
+to
+{{{
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-ebean_2.11</artifactId>
+            <version>${play2-ebean.version}</version>
+        </dependency>
+}}}
+where <strong>play2-ebean.version</strong> property needs to be added to project properties
+{{{
+    <properties>
+        ...
+        <play2-ebean.version>1.0.0-RC3</play2-ebean.version>
+    </properties>
+}}}
+and change plugin's configuration parameter from 
+{{{
+                    <serverJvmArgs>-DapplyEvolutions.default=true</serverJvmArgs>
+}}}
+to
+{{{
+                    <serverJvmArgs>-Dplay.evolutions.db.default.autoApply=true</serverJvmArgs>
 }}}
 
 * Play! 2.2.x to Play! 2.3.x migration*
