@@ -33,7 +33,7 @@ Simplest project (pom.xml file) should look like:
         <play2.version>2.3.8</play2.version>
         <scala.version>2.11.5</scala.version>
 
-        <play2.plugin.version>1.0.0-beta1</play2.plugin.version>
+        <play2.plugin.version>1.0.0-beta2</play2.plugin.version>
         <sbt-compiler.plugin.version>1.0.0-beta5</sbt-compiler.plugin.version>
     </properties>
 
@@ -108,7 +108,7 @@ Example with optional dependencies and configuration options:
         <play2.version>2.3.8</play2.version>
         <scala.version>2.11.5</scala.version>
 
-        <play2.plugin.version>1.0.0-beta1</play2.plugin.version>
+        <play2.plugin.version>1.0.0-beta2</play2.plugin.version>
         <sbt-compiler.plugin.version>1.0.0-beta5</sbt-compiler.plugin.version>
     </properties>
 
@@ -260,4 +260,4 @@ to
         </dependency>
 }}}
 
-For more example projects go to [http://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-beta1/play23/ Play! 2.3.x test projects].
+For more example projects go to [http://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-beta2/play23/ Play! 2.3.x test projects].
