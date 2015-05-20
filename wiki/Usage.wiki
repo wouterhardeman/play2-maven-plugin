@@ -298,7 +298,21 @@ to
     </properties>
 }}}
 
-b) add dependency
+b) remove repository definition (all artifacts are in Maven central repository)
+{{{
+    <repositories>
+        <repository>
+            <id>typesafe</id>
+            <name>Typesafe - releases</name>
+            <url>http://repo.typesafe.com/typesafe/releases/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+}}}
+
+c) add dependency
 {{{
         <dependency>
             <groupId>com.typesafe.play</groupId>
@@ -307,7 +321,7 @@ b) add dependency
         </dependency>
 }}}
 
-c) if using Specs2 tests add dependency
+d) if using Specs2 tests add dependency
 {{{
         <dependency>
             <groupId>com.typesafe.play</groupId>
@@ -334,7 +348,7 @@ and repository definition
     </repositories>
 }}}
 
-d) if using JDBC evolutions add dependency
+e) if using JDBC evolutions add dependency
 {{{
         <dependency>
             <groupId>com.typesafe.play</groupId>
@@ -343,7 +357,7 @@ d) if using JDBC evolutions add dependency
         </dependency>
 }}}
 
-e) if using Ebean change
+f) if using Ebean change
 {{{
         <dependency>
             <groupId>com.typesafe.play</groupId>
