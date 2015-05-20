@@ -388,7 +388,7 @@ to
 {{{
     <properties>
         ...
-        <play2.version>2.3.8</play2.version>
+        <play2.version>2.3.9</play2.version>
     </properties>
 }}}
 

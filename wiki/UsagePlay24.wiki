@@ -149,7 +149,7 @@ Example with optional dependencies and configuration options:
             <version>${play2.version}</version>
         </dependency>
 
-        <!-- only if using evolutions (this was part of 'play-jdbc_2.11' module before Play! 2.4) -->
+        <!-- only if using JDBC evolutions -->
         <dependency>
             <groupId>com.typesafe.play</groupId>
             <artifactId>play-jdbc-evolutions_2.11</artifactId>
@@ -163,7 +163,7 @@ Example with optional dependencies and configuration options:
             <version>${play2.version}</version>
         </dependency>
 
-        <!-- only if using Ebean (since Play! 2.4 it's separate module) -->
+        <!-- only if using Ebean -->
         <dependency>
             <groupId>com.typesafe.play</groupId>
             <artifactId>play-ebean_2.11</artifactId>
@@ -229,7 +229,7 @@ Example with optional dependencies and configuration options:
                 <extensions>true</extensions>
                 <configuration>
                     <!-- only if using database evolutions -->
-                    <serverJvmArgs>-DapplyEvolutions.default=true</serverJvmArgs>
+                    <serverJvmArgs>-Dplay.evolutions.db.default.autoApply=true</serverJvmArgs>
                 </configuration>
                 <executions>
                     <!-- only if there are assets in the project -->

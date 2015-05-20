@@ -31,7 +31,7 @@ Simplest project (pom.xml file) should look like:
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <play2.version>2.2.6</play2.version>
-        <scala.version>2.10.4</scala.version>
+        <scala.version>2.10.5</scala.version>
 
         <play2.plugin.version>1.0.0-beta2</play2.plugin.version>
         <sbt-compiler.plugin.version>1.0.0-beta5</sbt-compiler.plugin.version>
@@ -53,6 +53,7 @@ Simplest project (pom.xml file) should look like:
 
     <build>
         <sourceDirectory>${basedir}/app</sourceDirectory>
+        <testSourceDirectory>${basedir}/test</testSourceDirectory>
         <resources>
             <resource>
                 <directory>${basedir}/conf</directory>
@@ -106,7 +107,7 @@ Example with optional dependencies and configuration options:
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <play2.version>2.2.6</play2.version>
-        <scala.version>2.10.4</scala.version>
+        <scala.version>2.10.5</scala.version>
 
         <play2.plugin.version>1.0.0-beta2</play2.plugin.version>
         <sbt-compiler.plugin.version>1.0.0-beta5</sbt-compiler.plugin.version>
@@ -178,6 +179,7 @@ Example with optional dependencies and configuration options:
 
     <build>
         <sourceDirectory>${basedir}/app</sourceDirectory>
+        <testSourceDirectory>${basedir}/test</testSourceDirectory>
         <resources>
             <resource>
                 <directory>${basedir}/conf</directory>
