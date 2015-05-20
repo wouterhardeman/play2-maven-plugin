@@ -260,7 +260,7 @@ For Scala 2.10 just replace:
 {{{
     <properties>
         ...
-        <scala.version>2.11.5</scala.version>
+        <scala.version>2.11.6</scala.version>
     </properties>
 }}}
 
@@ -269,7 +269,7 @@ with
 {{{
     <properties>
         ...
-        <scala.version>2.10.4</scala.version>
+        <scala.version>2.10.5</scala.version>
     </properties>
 }}}
 
