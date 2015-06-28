@@ -19,7 +19,7 @@ Simplest project (pom.xml file) should look like:
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <play2.version>2.4.0-RC3</play2.version>
+        <play2.version>2.4.0</play2.version>
         <scala.version>2.11.6</scala.version>
 
         <play2.plugin.version>1.0.0-beta3</play2.plugin.version>
@@ -44,6 +44,7 @@ Simplest project (pom.xml file) should look like:
             <groupId>com.typesafe.play</groupId>
             <artifactId>play-netty-server_2.11</artifactId>
             <version>${play2.version}</version>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
@@ -107,7 +108,7 @@ Example with optional dependencies and configuration options:
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <play2.version>2.4.0-RC3</play2.version>
+        <play2.version>2.4.0</play2.version>
         <play2-ebean.version>1.0.0</play2-ebean.version>
         <play2-enhancer.version>1.1.0</play2-enhancer.version>
         <scala.version>2.11.6</scala.version>
