@@ -4,7 +4,7 @@ Release notes:
 
 * 1.0.0-beta3 (2015.06.27)
 
-Better Play! 2.4.x support. One backward incompatible change, 'enhance' mojo is not bound to 'play2' lifecycle anymore. It must be added explicitely in the project. This change follows SBT change (read about bytecode enhancement in [https://www.playframework.com/documentation/2.4.x/Migration24 Play! 2.4 Migration Guide].
+Better Play! 2.4.x support. One backward incompatible change, 'enhance' mojo is not bound to 'play2' lifecycle anymore. It must be added explicitely in the project. This change follows SBT change (read about bytecode enhancement in [https://www.playframework.com/documentation/2.4.x/Migration24 Play! 2.4 Migration Guide]). In consequence, enhancement (if needed) must be configured in projects using previous Play! versions too.
 
 For detailed information about all fixed issues see this [http://code.google.com/p/play2-maven-plugin/issues/list?can=1&q=label%3AMilestone-1.0.0-beta3%20status%3AFixed issues page].
 
