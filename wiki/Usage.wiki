@@ -58,6 +58,8 @@ to your play2 project or better add
 }}}
 to ~/.m2/settings.xml file. More info: http://maven.apache.org/guides/mini/guide-multiple-repositories.html
 
+*1.0.0-beta2 to 1.0.0-beta3 migration*
+
 *1.0.0-beta1 to 1.0.0-beta2 migration*
 
 Just change plugin version from

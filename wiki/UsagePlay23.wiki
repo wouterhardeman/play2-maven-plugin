@@ -33,7 +33,7 @@ Simplest project (pom.xml file) should look like:
         <play2.version>2.3.9</play2.version>
         <scala.version>2.11.6</scala.version>
 
-        <play2.plugin.version>1.0.0-beta2</play2.plugin.version>
+        <play2.plugin.version>1.0.0-beta3</play2.plugin.version>
         <sbt-compiler.plugin.version>1.0.0-beta5</sbt-compiler.plugin.version>
     </properties>
 
@@ -109,7 +109,7 @@ Example with optional dependencies and configuration options:
         <play2.version>2.3.9</play2.version>
         <scala.version>2.11.6</scala.version>
 
-        <play2.plugin.version>1.0.0-beta2</play2.plugin.version>
+        <play2.plugin.version>1.0.0-beta3</play2.plugin.version>
         <sbt-compiler.plugin.version>1.0.0-beta5</sbt-compiler.plugin.version>
     </properties>
 
@@ -210,11 +210,12 @@ Example with optional dependencies and configuration options:
                             <goal>less-compile</goal> <!-- only if precompiling less assets -->
                         </goals>
                     </execution>
-                    <!-- only if using Ebean -->
+                    <!-- only if enhancement is required -->
                     <execution>
-                        <id>default-play2-ebean-enhance</id>
+                        <id>default-play2-enhance</id>
                         <goals>
-                            <goal>ebean-enhance</goal>
+                            <goal>enhance</goal>
+                            <goal>ebean-enhance</goal> <!-- only if using Ebean -->
                         </goals>
                     </execution>
                 </executions>
@@ -262,4 +263,4 @@ to
         </dependency>
 }}}
 
-For more example projects go to [http://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-beta2/play23/ Play! 2.3.x test projects].
+For more example projects go to [http://play2-maven-plugin.googlecode.com/svn/tags/test-projects-1.0.0-beta3/play23/ Play! 2.3.x test projects].
