@@ -108,6 +108,7 @@ Example with optional dependencies and configuration options:
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+        <anorm.version>2.4.0</anorm.version>
         <play2.version>2.4.1</play2.version>
         <play2-ebean.version>1.0.0</play2-ebean.version>
         <play2-enhancer.version>1.1.0</play2-enhancer.version>
@@ -134,7 +135,7 @@ Example with optional dependencies and configuration options:
         <dependency>
             <groupId>com.typesafe.play</groupId>
             <artifactId>anorm_2.11</artifactId>
-            <version>${play2.version}</version>
+            <version>${anorm.version}</version>
         </dependency>
 
         <!-- only if using JDBC -->
