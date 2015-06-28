@@ -77,7 +77,7 @@ to
     </properties>
 }}}
 
-If Java classes enhancement is required add <execution> with 'enhance' goal:
+If Java classes enhancement is required add 'execution' element with 'enhance' goal:
 {{{
             <plugin>
                 <groupId>com.google.code.play2-maven-plugin</groupId>
