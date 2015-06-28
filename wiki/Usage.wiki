@@ -60,6 +60,44 @@ to ~/.m2/settings.xml file. More info: http://maven.apache.org/guides/mini/guide
 
 *1.0.0-beta2 to 1.0.0-beta3 migration*
 
+Just change plugin version from
+{{{
+    <properties>
+        ...
+        <play2.plugin.version>1.0.0-beta2</play2.plugin.version>
+        ...
+    </properties>
+}}}
+to
+{{{
+    <properties>
+        ...
+        <play2.plugin.version>1.0.0-beta3</play2.plugin.version>
+        ...
+    </properties>
+}}}
+
+If Java classes enhancement is required add:
+{{{
+            <plugin>
+                <groupId>com.google.code.play2-maven-plugin</groupId>
+                <artifactId>play2-maven-plugin</artifactId>
+                <version>${play2.plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    ...
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>default-play2-enhance</id>
+                        <goals>
+                            <goal>enhance</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+}}}
+
 *1.0.0-beta1 to 1.0.0-beta2 migration*
 
 Just change plugin version from
@@ -296,7 +334,7 @@ to
 {{{
     <properties>
         ...
-        <play2.version>2.4.0-RC3</play2.version>
+        <play2.version>2.4.1</play2.version>
     </properties>
 }}}
 
@@ -320,10 +358,28 @@ c) add dependency
             <groupId>com.typesafe.play</groupId>
             <artifactId>play-netty-server_2.10</artifactId>
             <version>${play2.version}</version>
+            <scope>runtime</scope>
         </dependency>
 }}}
 
-d) if using Specs2 tests add dependency
+d) if enhancing classes add dependency
+{{{
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-enhancer</artifactId>
+            <version>${play2-enhancer.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+}}}
+where <strong>play2-enhancer.version</strong> property needs to be added to project properties
+{{{
+    <properties>
+        ...
+        <play2-enhancer.version>1.1.0</play2-enhancer.version>
+    </properties>
+}}}
+
+e) if using Specs2 tests add dependency
 {{{
         <dependency>
             <groupId>com.typesafe.play</groupId>
@@ -350,7 +406,7 @@ and repository definition
     </repositories>
 }}}
 
-e) if using JDBC evolutions add dependency
+f) if using JDBC evolutions add dependency
 {{{
         <dependency>
             <groupId>com.typesafe.play</groupId>
@@ -359,7 +415,7 @@ e) if using JDBC evolutions add dependency
         </dependency>
 }}}
 
-f) if using Ebean change
+g) if using Ebean change
 {{{
         <dependency>
             <groupId>com.typesafe.play</groupId>
@@ -379,7 +435,7 @@ where <strong>play2-ebean.version</strong> property needs to be added to project
 {{{
     <properties>
         ...
-        <play2-ebean.version>1.0.0-RC3</play2-ebean.version>
+        <play2-ebean.version>1.0.0</play2-ebean.version>
     </properties>
 }}}
 and change plugin's configuration parameter from 
