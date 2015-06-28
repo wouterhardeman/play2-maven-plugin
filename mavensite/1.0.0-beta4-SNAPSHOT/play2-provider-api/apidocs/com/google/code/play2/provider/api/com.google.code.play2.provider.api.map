@@ -1,0 +1,36 @@
+<map id="G" name="G">
+<area shape="rect" id="c0" href="./TemplateCompilationException.html" title="com.google.code.play2.provider.api.TemplateCompilationException" alt="" coords="15,116,206,140"/>
+<area shape="rect" id="node1" href="./TemplateCompilationException.html" title="&lt;TABLE&gt;" alt="" coords="5,104,216,152"/>
+<area shape="rect" id="c1" href="./SourceGenerationException.html" title="com.google.code.play2.provider.api.SourceGenerationException" alt="" coords="139,19,311,43"/>
+<area shape="rect" id="node2" href="./SourceGenerationException.html" title="&lt;TABLE&gt;" alt="" coords="129,7,321,55"/>
+<area shape="rect" id="c2" href="./RoutesCompilationException.html" title="com.google.code.play2.provider.api.RoutesCompilationException" alt="" coords="251,116,429,140"/>
+<area shape="rect" id="node3" href="./RoutesCompilationException.html" title="&lt;TABLE&gt;" alt="" coords="240,104,440,152"/>
+<area shape="rect" id="c3" href="./Play2TemplateCompiler.html" title="com.google.code.play2.provider.api.Play2TemplateCompiler" alt="" coords="356,11,508,50"/>
+<area shape="rect" id="node4" href="./Play2TemplateCompiler.html" title="&lt;TABLE&gt;" alt="" coords="345,6,519,55"/>
+<area shape="rect" id="c4" href="./Play2Runner.html" title="com.google.code.play2.provider.api.Play2Runner" alt="" coords="553,11,642,50"/>
+<area shape="rect" id="node5" href="./Play2Runner.html" title="&lt;TABLE&gt;" alt="" coords="543,6,652,55"/>
+<area shape="rect" id="c5" href="./Play2RoutesCompiler.html" title="com.google.code.play2.provider.api.Play2RoutesCompiler" alt="" coords="686,11,826,50"/>
+<area shape="rect" id="node6" href="./Play2RoutesCompiler.html" title="&lt;TABLE&gt;" alt="" coords="676,6,836,55"/>
+<area shape="rect" id="c6" href="./Play2Providers.html" title="com.google.code.play2.provider.api.Play2Providers" alt="" coords="871,19,972,43"/>
+<area shape="rect" id="node7" href="./Play2Providers.html" title="&lt;TABLE&gt;" alt="" coords="860,7,983,55"/>
+<area shape="rect" id="c7" href="./Play2Provider.html" title="com.google.code.play2.provider.api.Play2Provider" alt="" coords="1017,11,1111,50"/>
+<area shape="rect" id="node8" href="./Play2Provider.html" title="&lt;TABLE&gt;" alt="" coords="1007,6,1121,55"/>
+<area shape="rect" id="c8" href="./Play2LessCompiler.html" title="com.google.code.play2.provider.api.Play2LessCompiler" alt="" coords="1156,11,1284,50"/>
+<area shape="rect" id="node9" href="./Play2LessCompiler.html" title="&lt;TABLE&gt;" alt="" coords="1145,6,1295,55"/>
+<area shape="rect" id="c9" href="./Play2JavascriptCompiler.html" title="com.google.code.play2.provider.api.Play2JavascriptCompiler" alt="" coords="1329,11,1484,50"/>
+<area shape="rect" id="node10" href="./Play2JavascriptCompiler.html" title="&lt;TABLE&gt;" alt="" coords="1319,6,1495,55"/>
+<area shape="rect" id="c10" href="./Play2JavaEnhancer.html" title="com.google.code.play2.provider.api.Play2JavaEnhancer" alt="" coords="1529,11,1655,50"/>
+<area shape="rect" id="node11" href="./Play2JavaEnhancer.html" title="&lt;TABLE&gt;" alt="" coords="1519,6,1665,55"/>
+<area shape="rect" id="c11" href="./Play2EbeanEnhancer.html" title="com.google.code.play2.provider.api.Play2EbeanEnhancer" alt="" coords="1699,11,1837,50"/>
+<area shape="rect" id="node12" href="./Play2EbeanEnhancer.html" title="&lt;TABLE&gt;" alt="" coords="1689,6,1847,55"/>
+<area shape="rect" id="c12" href="./Play2CoffeescriptCompiler.html" title="com.google.code.play2.provider.api.Play2CoffeescriptCompiler" alt="" coords="1881,11,2047,50"/>
+<area shape="rect" id="node13" href="./Play2CoffeescriptCompiler.html" title="&lt;TABLE&gt;" alt="" coords="1871,6,2057,55"/>
+<area shape="rect" id="c13" href="./LessCompilationResult.html" title="com.google.code.play2.provider.api.LessCompilationResult" alt="" coords="2092,11,2241,50"/>
+<area shape="rect" id="node14" href="./LessCompilationResult.html" title="&lt;TABLE&gt;" alt="" coords="2081,6,2252,55"/>
+<area shape="rect" id="c14" href="./JavascriptCompilationResult.html" title="com.google.code.play2.provider.api.JavascriptCompilationResult" alt="" coords="2286,11,2463,50"/>
+<area shape="rect" id="node15" href="./JavascriptCompilationResult.html" title="&lt;TABLE&gt;" alt="" coords="2276,6,2473,55"/>
+<area shape="rect" id="c15" href="./CoffeescriptCompilationResult.html" title="com.google.code.play2.provider.api.CoffeescriptCompilationResult" alt="" coords="2507,11,2695,50"/>
+<area shape="rect" id="node16" href="./CoffeescriptCompilationResult.html" title="&lt;TABLE&gt;" alt="" coords="2497,6,2705,55"/>
+<area shape="rect" id="c16" href="./AssetCompilationException.html" title="com.google.code.play2.provider.api.AssetCompilationException" alt="" coords="2739,19,2909,43"/>
+<area shape="rect" id="node17" href="./AssetCompilationException.html" title="&lt;TABLE&gt;" alt="" coords="2729,7,2919,55"/>
+</map>
