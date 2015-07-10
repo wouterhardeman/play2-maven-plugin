@@ -54,7 +54,7 @@ public abstract class AbstractPlay2StartServerMojo
         Play2Provider play2Provider = getProvider();
         Play2Runner play2Runner = play2Provider.getRunner();
 
-        Java javaTask = prepareAntJavaTask( play2Runner.getServerMainClass(), true );
+        Java javaTask = prepareAntJavaTask( play2Runner.getProdServerMainClass(), true );
         if ( spawn )
         {
             javaTask.setSpawn( true );

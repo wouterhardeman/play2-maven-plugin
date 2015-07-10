@@ -17,8 +17,15 @@
 
 package com.google.code.play2.provider.api;
 
+import java.io.File;
+import java.util.List;
+
 public interface Play2Runner
 {
-    String getServerMainClass();
+    String getProdServerMainClass();
+
+    String getDevServerMainClass();
+    
+    void runInDevMode(File baseDirectory, BuildLink buildLink, List<File> dependencyClasspath, List<File> docsClasspath ) throws Throwable;
 
 }
