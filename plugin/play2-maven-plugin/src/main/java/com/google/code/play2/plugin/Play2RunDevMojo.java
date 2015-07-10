@@ -133,36 +133,41 @@ public class Play2RunDevMojo
             //Compiler sbtCompiler = getSbtCompiler();
             //String resolvedScalaVersion = getScalaVersion( sbtCompiler );
             String playDocsSuffix = "unknown-scala-version";
-            if ( scalaVersion.startsWith( "2.10." )) {
+            if ( scalaVersion.startsWith( "2.10." ) )
+            {
                 playDocsSuffix = "2.10";
             }
-            else if ( scalaVersion.startsWith( "2.11." )) {
+            else if ( scalaVersion.startsWith( "2.11." ) )
+            {
                 playDocsSuffix = "2.11";
             }
 
-            Artifact playDocsArtifact = getResolvedArtifact("com.typesafe.play", "play-docs_" + playDocsSuffix, playVersion);
-            Set<Artifact> playDocsDependencies = getAllDependencies(playDocsArtifact);
+            Artifact playDocsArtifact =
+                getResolvedArtifact( "com.typesafe.play", "play-docs_" + playDocsSuffix, playVersion );
+            Set<Artifact> playDocsDependencies = getAllDependencies( playDocsArtifact );
             Map<String, Artifact> uniquePlayDocsDependencies = new HashMap<String, Artifact>();
-            uniquePlayDocsDependencies.put("com.typesafe.play:play-docs_2.10", playDocsArtifact);
-            for (Artifact playDocsDependency: playDocsDependencies)
+            uniquePlayDocsDependencies.put( "com.typesafe.play:play-docs_2.10", playDocsArtifact );
+            for ( Artifact playDocsDependency : playDocsDependencies )
             {
                 String key = playDocsDependency.getGroupId() + ":" + playDocsDependency.getArtifactId();
                 Artifact foundArtifact = uniquePlayDocsDependencies.get( key );
-                if (foundArtifact == null)
+                if ( foundArtifact == null )
                 {
                     uniquePlayDocsDependencies.put( key, playDocsDependency );
                 }
-                else // maybe newer found
+                else
+                // maybe newer found
                 {
-                    if (foundArtifact.getVersion().compareTo(playDocsDependency.getVersion()) < 0) {
+                    if ( foundArtifact.getVersion().compareTo( playDocsDependency.getVersion() ) < 0 )
+                    {
                         uniquePlayDocsDependencies.put( key, playDocsDependency );
                     }
                 }
             }
-            List<File> playDocsClasspath = new ArrayList<File>(uniquePlayDocsDependencies.size());
-            for (Artifact dependencyArtifact: uniquePlayDocsDependencies.values())
+            List<File> playDocsClasspath = new ArrayList<File>( uniquePlayDocsDependencies.size() );
+            for ( Artifact dependencyArtifact : uniquePlayDocsDependencies.values() )
             {
-                playDocsClasspath.add (dependencyArtifact.getFile());
+                playDocsClasspath.add( dependencyArtifact.getFile() );
             }
             /*System.out.println("playDocsDependencies:");
             for (Artifact playDocsDependency: playDocsDependencies)
@@ -174,7 +179,9 @@ public class Play2RunDevMojo
             {
                 System.out.println("- " + playDocsDependency.getFile().getPath());
             }*/
-            play2Runner.runInDevMode(baseDir, new BuildLinkImpl(new File(project.getBuild().getOutputDirectory()), analysisCacheFile, sbtAnalysisProcessor), dependencyClasspath, playDocsClasspath);
+            play2Runner.runInDevMode( baseDir, new BuildLinkImpl( new File( project.getBuild().getOutputDirectory() ),
+                                                                  analysisCacheFile, sbtAnalysisProcessor ),
+                                      dependencyClasspath, playDocsClasspath );
         }
         catch ( Throwable e )
         {
@@ -182,13 +189,16 @@ public class Play2RunDevMojo
         }
     }
 
-    private static class BuildLinkImpl implements BuildLink
+    private static class BuildLinkImpl
+        implements BuildLink
     {
         private File classesDirectory;
+
         private File analysisCacheFile;
+
         private AnalysisProcessor sbtAnalysisProcessor;
 
-        public BuildLinkImpl(File classesDirectory, File analysisCacheFile, AnalysisProcessor sbtAnalysisProcessor)
+        public BuildLinkImpl( File classesDirectory, File analysisCacheFile, AnalysisProcessor sbtAnalysisProcessor )
         {
             this.classesDirectory = classesDirectory;
             this.analysisCacheFile = analysisCacheFile;
@@ -203,18 +213,19 @@ public class Play2RunDevMojo
             String classesDirectoryPath = classesDirectory.getAbsolutePath() + File.separator;
 //            Set<File> allSources = getAllSources();
             Analysis analysis = sbtAnalysisProcessor.readFromFile( analysisCacheFile );
-            for (File sourceFile: analysis.getSourceFiles())
+            for ( File sourceFile : analysis.getSourceFiles() )
             {
                 Set<File> sourceFileProducts = analysis.getProducts( sourceFile );
-                for (File product: sourceFileProducts)
+                for ( File product : sourceFileProducts )
                 {
                     String absolutePath = product.getAbsolutePath();
-                    if (absolutePath.contains( "$" )) {
+                    if ( absolutePath.contains( "$" ) )
+                    {
                         continue; // skip inner and object classes
                     }
                     String relativePath = absolutePath.substring( classesDirectoryPath.length() );
 //                    String name = product.getName();
-                    String name = relativePath.substring( 0, relativePath.length() - ".class".length());
+                    String name = relativePath.substring( 0, relativePath.length() - ".class".length() );
                     /*if (name.indexOf( '$' ) > 0)
                     {
                         name = name.substring( 0, name.indexOf( '$' ) );

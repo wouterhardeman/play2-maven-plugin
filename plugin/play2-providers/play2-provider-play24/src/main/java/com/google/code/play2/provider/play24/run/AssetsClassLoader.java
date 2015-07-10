@@ -5,22 +5,24 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
-    /**
-     * A ClassLoader for serving assets.
-     *
-     * Serves assets from the given directories, at the given prefix.
-     *
-     * @param assets A list of assets directories, paired with the prefix they should be served from.
-     */
-    public class AssetsClassLoader extends ClassLoader
-    {
-        private List<Asset> assets;
+/**
+ * A ClassLoader for serving assets.
+ *
+ * Serves assets from the given directories, at the given prefix.
+ *
+ * @param assets A list of assets directories, paired with the prefix they should be served from.
+ */
+public class AssetsClassLoader
+    extends ClassLoader
+{
+    private List<Asset> assets;
 
-        public AssetsClassLoader(ClassLoader parent, List<Asset> assets)
-        {
-            super(parent);
-            this.assets = assets;
-        }
+    public AssetsClassLoader( ClassLoader parent, List<Asset> assets )
+    {
+        super( parent );
+        this.assets = assets;
+    }
+
 /*
         override def findResource(name: String) = {
         assets.collectFirst {
@@ -29,34 +31,36 @@ import java.util.List;
         }.orNull
       }
 */
-        @Override /* ClassLoader */
-        public URL findResource(String name)
+    @Override /* ClassLoader */
+    public URL findResource( String name )
+    {
+        URL result = null;
+        for ( Asset asset : assets )
         {
-            URL result = null;
-            for (Asset asset: assets)
+            if ( exists( name, asset.prefix, asset.dir ) )
             {
-                if (exists(name, asset.prefix, asset.dir))
+                try
                 {
-                    try
-                    {
-                        result = new File(asset.dir, name.substring(asset.prefix.length())).toURI().toURL();
-                    }
-                    catch (MalformedURLException e)
-                    {
-                        // ignore, result = null;
-                    }
-                    break;
+                    result = new File( asset.dir, name.substring( asset.prefix.length() ) ).toURI().toURL();
                 }
+                catch ( MalformedURLException e )
+                {
+                    // ignore, result = null;
+                }
+                break;
             }
-            return result;
         }
+        return result;
+    }
+
 /*
       def exists(name: String, prefix: String, dir: File) = {
         name.startsWith(prefix) && (dir / name.substring(prefix.length)).isFile
       }
 */
-        private boolean exists(String name, String prefix, File dir)
-        {
-            return name.startsWith(prefix) && new File(dir, name.substring(prefix.length())).isFile();
-        }
+    private boolean exists( String name, String prefix, File dir )
+    {
+        return name.startsWith( prefix ) && new File( dir, name.substring( prefix.length() ) ).isFile();
     }
+
+}

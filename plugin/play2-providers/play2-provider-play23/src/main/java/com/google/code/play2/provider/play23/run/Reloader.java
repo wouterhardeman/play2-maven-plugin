@@ -22,11 +22,6 @@ import play.core.server.ServerWithStop;
 
 public class Reloader implements BuildLink
 {
-    /*private static interface ClassLoaderCreator
-    {
-        ClassLoader apply(String name, URL[] urls, ClassLoader parent);
-    }*/
-
     // Regex to match Java System Properties of the format -Dfoo=bar
     //TMP static val SystemProperty = "-D([^=]+)=(.*)".r
 
@@ -34,43 +29,45 @@ public class Reloader implements BuildLink
     private static class Property
     {
         String key, value;
-        public Property(String key, String value)
+
+        public Property( String key, String value )
         {
             this.key = key;
             this.value = value;
         }
     }
+
     /**
      * Take all the options in javaOptions of the format "-Dfoo=bar" and return them as a Seq of key value pairs of the format ("foo" -> "bar")
      */
     /*TMP static def extractSystemProperties(javaOptions: Seq[String]): Seq[(String, String)] = {
       javaOptions.collect { case SystemProperty(key, value) => key -> value }
     }*/
-    private static List<Property> extractSystemProperties(List<String> javaOptions)
+    private static List<Property> extractSystemProperties( List<String> javaOptions )
     {
         List<Property> result = new ArrayList<Property>();
-        for (String javaOption: javaOptions)
+        for ( String javaOption : javaOptions )
         {
-            //TODO - use regex
-            if (javaOption.startsWith( "-D" ))
+            // TODO - use regex
+            if ( javaOption.startsWith( "-D" ) )
             {
                 String[] namevalue = javaOption.substring( 2 ).split( "=", 2 );
-                result.add(new Property(namevalue[0], namevalue[1]));
+                result.add( new Property( namevalue[0], namevalue[1] ) );
             }
         }
         return result;
     }
 
-    private static int parsePort(String portString)
+    private static int parsePort( String portString )
     {
         try
         {
-            return Integer.parseInt(portString);
+            return Integer.parseInt( portString );
         }
-        catch (NumberFormatException e)
+        catch ( NumberFormatException e )
         {
-            throw new RuntimeException("Invalid port argument: " + portString);//??
-            //System.err.println("Invalid port argument: " + portString);//FIXME
+            throw new RuntimeException( "Invalid port argument: " + portString );// ??
+            // System.err.println("Invalid port argument: " + portString);//FIXME
         }
     }
 
@@ -91,21 +88,21 @@ public class Reloader implements BuildLink
         else (javaProperties, maybePort.map(parsePort).orElse(Some(defaultHttpPort)), maybeHttpsPort)
       }
 */
-    private static URL[] urls(List<File> cp) //throws MalformedURLException
+    private static URL[] urls( List<File> cp ) // throws MalformedURLException
     { //= cp.map(_.toURI.toURL).toArray
         try
         {
-        URL[] result = new URL[cp.size()];
-        for (int i=0; i<cp.size(); i++)
-        {
-            File file = cp.get( i );
-            result[i] = file.toURI().toURL();
+            URL[] result = new URL[cp.size()];
+            for ( int i = 0; i < cp.size(); i++ )
+            {
+                File file = cp.get( i );
+                result[i] = file.toURI().toURL();
+            }
+            return result;
         }
-        return result;
-        }
-        catch (MalformedURLException e)
+        catch ( MalformedURLException e )
         {
-            throw new RuntimeException(e);//?????
+            throw new RuntimeException( e );// ?????
         }
     }
 
@@ -127,26 +124,28 @@ public class Reloader implements BuildLink
         override def toString = name + "{" + getURLs.map(_.toString).mkString(", ") + "}"
       }
 */
-    private static ClassLoaderCreator createDelegatedResourcesClassLoader = new ClassLoaderCreator() {
+    private static ClassLoaderCreator createDelegatedResourcesClassLoader = new ClassLoaderCreator()
+    {
 
         @Override
         public URLClassLoader apply( final String name, URL[] urls, ClassLoader parent )
         {
-            return new NamedURLClassLoader(name, urls, parent)
+            return new NamedURLClassLoader( name, urls, parent )
             {
                 @Override
-                public Enumeration<URL> getResources(String name) throws IOException
+                public Enumeration<URL> getResources( String name )
+                    throws IOException
                 {
-                    return getParent().getResources(name);
+                    return getParent().getResources( name );
                 }
-                
+
             };
         }
 
     };
 
-    //    def assetsClassLoader(allAssets: Seq[(String, File)])(parent: ClassLoader): ClassLoader = new AssetsClassLoader(parent, allAssets)
-    private static ClassLoader assetsClassLoader(ClassLoader parent, List<Asset> assets)
+//    def assetsClassLoader(allAssets: Seq[(String, File)])(parent: ClassLoader): ClassLoader = new AssetsClassLoader(parent, allAssets)
+    private static ClassLoader assetsClassLoader( ClassLoader parent, List<Asset> assets )
     {
         return new AssetsClassLoader( parent, assets );
     }
@@ -160,10 +159,11 @@ public class Reloader implements BuildLink
 //          override def toString = "Common ClassLoader: " + getURLs.map(_.toString).mkString(",")
 //        }
 //      }
-    public static ClassLoader commonClassLoader( List<File> classpath ) throws MalformedURLException
+    public static ClassLoader commonClassLoader( List<File> classpath )
+        throws MalformedURLException
     {
-        List<URL> commonClasspath = new ArrayList<URL>(1);
-        for ( File depFile: classpath )
+        List<URL> commonClasspath = new ArrayList<URL>( 1 );
+        for ( File depFile : classpath )
         {
             String name = depFile.getName();
             if ( name.startsWith( "h2-" ) || name == "h2.jar" )
@@ -174,62 +174,24 @@ public class Reloader implements BuildLink
         return new URLClassLoader( commonClasspath.toArray( new URL[commonClasspath.size()] ), null /* important here, don't depend of the sbt classLoader! */ );
     }
 
-    private static class ReloaderPlayDevServer implements PlayDevServer
-    {
-        private ServerWithStop server;
-        private JarFile docsJarFile;
-        private Reloader reloader;
-
-        public ReloaderPlayDevServer(ServerWithStop server,
-                                     JarFile docsJarFile,
-                                     Reloader reloader)
-        {
-            this.server = server;
-            this.docsJarFile = docsJarFile;
-            this.reloader = reloader;
-        }
-
-        @Override /* Closeable interface */
-        public void close() throws IOException
-        {
-//          server.stop()
-//          docsJarFile.close()
-//          reloader.close()
-            server.stop();
-            docsJarFile.close();
-            reloader.close();
-
-//          // Notify hooks
-//          runHooks.run(_.afterStopped())
-//
-//          // Remove Java properties
-//          properties.foreach {
-//            case (key, _) => System.clearProperty(key)
-//          }
-            //FIXME
-        }
-
-        @Override /* PlayDevServer interface */
-        public BuildLink buildLink()
-        {
-            return reloader;
-        }
-    }
-
     //Moja proba rozwiazania cyklu
-    private static class XApplicationClassLoaderProvider implements ApplicationClassLoaderProvider
+    private static class XApplicationClassLoaderProvider
+        implements ApplicationClassLoaderProvider
     {
         private Reloader reloader;
-        public void setReloader(Reloader reloader)
+
+        public void setReloader( Reloader reloader )
         {
             this.reloader = reloader;
         }
+
         @Override
         public ClassLoader get()
         {
             return reloader != null ? reloader.getClassLoader() : null;
         }
     }
+
 //    /**
 //     * Start the Play server in dev mode
 //     *
@@ -243,27 +205,22 @@ public class Reloader implements BuildLink
 //      docsClasspath: Classpath, defaultHttpPort: Int, projectPath: File,
 //      devSettings: Seq[(String, String)], args: Seq[String],
 //      runSbtTask: String => AnyRef): PlayDevServer = {
-    public static PlayDevServer startDevMode(List<String> javaOptions,
-                                             List<File> dependencyClasspath,
-                                             ClassLoaderCreator dependencyClassLoader,
-                                             ReloadCompile reloadCompile,
-                                             ClassLoaderCreator reloaderClassLoader,
-                                             AssetsClassLoaderCreator assetsClassLoader,
-                                             ClassLoader commonClassLoader,
-                                             List/*<String>*/<File> monitoredFiles,
-                                             PlayWatchService playWatchService,
-                                             List<File> docsClasspath,
-                                             int defaultHttpPort,
-                                             File projectPath,
-                                             List<DevSetting> devSettings,
-                                             List<String> args) throws Throwable/*MalformedURLException*/
+    public static PlayDevServer startDevMode( List<String> javaOptions, List<File> dependencyClasspath,
+                                              ClassLoaderCreator dependencyClassLoader, ReloadCompile reloadCompile,
+                                              ClassLoaderCreator reloaderClassLoader,
+                                              AssetsClassLoaderCreator assetsClassLoader,
+                                              ClassLoader commonClassLoader, List/* <String> */<File> monitoredFiles,
+                                              PlayWatchService playWatchService, List<File> docsClasspath,
+                                              int defaultHttpPort, File projectPath, List<DevSetting> devSettings,
+                                              List<String> args )
+        throws Throwable
     {
         List<Property> properties;
-        Integer httpPort = Integer.valueOf( 9000 );//FIXME
-        Integer httpsPort = null;//FIXME
+        Integer httpPort = Integer.valueOf( 9000 );// FIXME
+        Integer httpsPort = null;// FIXME
 //        val (properties, httpPort, httpsPort) = filterArgs(args, defaultHttpPort = defaultHttpPort)
 //        val systemProperties = extractSystemProperties(javaOptions)
-        List<Property> systemProperties = extractSystemProperties(javaOptions);
+        List<Property> systemProperties = extractSystemProperties( javaOptions );
 
 //        require(httpPort.isDefined || httpsPort.isDefined, "You have to specify https.port when http.port is disabled")
 
@@ -272,7 +229,7 @@ public class Reloader implements BuildLink
 //          case (key, value) => System.setProperty(key, value)
 //        }
         //TODO to samo dla properties
-        for(Property property: systemProperties)
+        for ( Property property : systemProperties )
         {
             System.setProperty( property.key, property.value );
         }
@@ -321,7 +278,7 @@ public class Reloader implements BuildLink
          * use some attention.
          */
 
-        ClassLoader  buildLoader = Reloader.class.getClassLoader();
+        ClassLoader buildLoader = Reloader.class.getClassLoader();
 
         /**
          * ClassLoader that delegates loading of shared build link classes to the
@@ -332,15 +289,18 @@ public class Reloader implements BuildLink
 //          def get: ClassLoader = { reloader.getClassLoader.orNull }
 //        })
         XApplicationClassLoaderProvider x = new XApplicationClassLoaderProvider();
-        ClassLoader delegatingLoader = new DelegatingClassLoader( commonClassLoader, buildLoader, x);
+        ClassLoader delegatingLoader = new DelegatingClassLoader( commonClassLoader, buildLoader, x );
 
 //        lazy val applicationLoader = dependencyClassLoader("PlayDependencyClassLoader", urls(dependencyClasspath), delegatingLoader)
-        ClassLoader applicationLoader = dependencyClassLoader.apply( "PlayDependencyClassLoader", urls(dependencyClasspath), delegatingLoader );
+        ClassLoader applicationLoader =
+            dependencyClassLoader.apply( "PlayDependencyClassLoader", urls( dependencyClasspath ), delegatingLoader );
 //        lazy val assetsLoader = assetsClassLoader(applicationLoader)
-        ClassLoader assetsLoader = assetsClassLoader.apply(applicationLoader);
+        ClassLoader assetsLoader = assetsClassLoader.apply( applicationLoader );
 
 //        lazy val reloader = new Reloader(reloadCompile, reloaderClassLoader, assetsLoader, projectPath, devSettings, monitoredFiles, playWatchService, runSbtTask)
-        Reloader reloader = new Reloader(reloadCompile, reloaderClassLoader, assetsLoader, projectPath, devSettings, monitoredFiles, playWatchService/*, runSbtTask*/);
+        Reloader reloader =
+            new Reloader( reloadCompile, reloaderClassLoader, assetsLoader, projectPath, devSettings, monitoredFiles,
+                          playWatchService/* , runSbtTask */);
         x.setReloader( reloader );
 
         try
@@ -351,17 +311,17 @@ public class Reloader implements BuildLink
             // Get a handler for the documentation. The documentation content lives in play/docs/content
             // within the play-docs JAR.
 //            val docsLoader = new URLClassLoader(urls(docsClasspath), applicationLoader)
-            ClassLoader docsLoader = new URLClassLoader(urls(docsClasspath), applicationLoader);
+            ClassLoader docsLoader = new URLClassLoader( urls( docsClasspath ), applicationLoader );
 //            val docsJarFile = {
 //                val f = docsClasspath.filter(_.getName.startsWith("play-docs")).head
 //                new JarFile(f)
 //            }
             JarFile docsJarFile = null;
-            for(File f: docsClasspath)
+            for ( File f : docsClasspath )
             {
-                if (f.getName().startsWith( "play-docs" ))
+                if ( f.getName().startsWith( "play-docs" ) )
                 {
-                    docsJarFile = new JarFile(f);
+                    docsJarFile = new JarFile( f );
                     break;
                 }
             }
@@ -370,9 +330,10 @@ public class Reloader implements BuildLink
 //                val factoryMethod = docHandlerFactoryClass.getMethod("fromJar", classOf[JarFile], classOf[String])
 //                factoryMethod.invoke(null, docsJarFile, "play/docs/content").asInstanceOf[BuildDocHandler]
 //            }
-            Class<?> docHandlerFactoryClass = docsLoader.loadClass("play.docs.BuildDocHandlerFactory");
-            Method factoryMethod = docHandlerFactoryClass.getMethod("fromJar", JarFile.class , String.class);
-            BuildDocHandler buildDocHandler = (BuildDocHandler)factoryMethod.invoke(null, docsJarFile, "play/docs/content");
+            Class<?> docHandlerFactoryClass = docsLoader.loadClass( "play.docs.BuildDocHandlerFactory" );
+            Method factoryMethod = docHandlerFactoryClass.getMethod( "fromJar", JarFile.class, String.class );
+            BuildDocHandler buildDocHandler =
+                (BuildDocHandler) factoryMethod.invoke( null, docsJarFile, "play/docs/content" );
 
 //            val server = {
 //                val mainClass = applicationLoader.loadClass("play.core.server.NettyServer")
@@ -384,11 +345,11 @@ public class Reloader implements BuildLink
 //                  mainDev.invoke(null, reloader, buildDocHandler, httpsPort.get: java.lang.Integer).asInstanceOf[play.core.server.ServerWithStop]
 //                }
 //            }
-            Class<?> mainClass = applicationLoader.loadClass("play.core.server.NettyServer");
+            Class<?> mainClass = applicationLoader.loadClass( "play.core.server.NettyServer" );
             String mainMethod = httpPort != null ? "mainDevHttpMode" : "mainDevOnlyHttpsMode";
             int port = httpPort != null ? httpPort.intValue() : httpsPort.intValue();
-            Method mainDev = mainClass.getMethod(mainMethod, BuildLink.class, BuildDocHandler.class, Integer.TYPE);
-            ServerWithStop server = (ServerWithStop)mainDev.invoke(null, reloader, buildDocHandler, port);
+            Method mainDev = mainClass.getMethod( mainMethod, BuildLink.class, BuildDocHandler.class, Integer.TYPE );
+            ServerWithStop server = (ServerWithStop) mainDev.invoke( null, reloader, buildDocHandler, port );
 
             // Notify hooks
 //            runHooks.run(_.afterStarted(server.mainAddress))
@@ -410,9 +371,9 @@ public class Reloader implements BuildLink
 //                }
 //              }
 //            }
-            return new ReloaderPlayDevServer(server, docsJarFile, reloader);
+            return new ReloaderPlayDevServer( server, docsJarFile, reloader );
         }
-        catch (Throwable t)
+        catch ( Throwable t )
         {
 //            // Let hooks clean up
 //            runHooks.foreach { hook =>
@@ -428,16 +389,22 @@ public class Reloader implements BuildLink
     }
 
     private ReloadCompile reloadCompile;
+
     private ClassLoaderCreator createClassLoader;
+
     private ClassLoader baseLoader;
+
     private final File projectPath;
+
     private List<DevSetting> devSettings;
-    private List/*<String>*/<File> monitoredFiles; 
+
+    private List/* <String> */<File> monitoredFiles;
+
     private PlayWatchService playWatchService;
 
-    public Reloader(ReloadCompile reloadCompile, ClassLoaderCreator createClassLoader, ClassLoader baseLoader,
-                    final File projectPath, List<DevSetting> devSettings, List/*<String>*/<File> monitoredFiles, 
-                    PlayWatchService playWatchService/*, runSbtTask: String => AnyRef*/)
+    public Reloader( ReloadCompile reloadCompile, ClassLoaderCreator createClassLoader, ClassLoader baseLoader,
+                     final File projectPath, List<DevSetting> devSettings, List/* <String> */<File> monitoredFiles,
+                     PlayWatchService playWatchService/* , runSbtTask: String => AnyRef */)
     {
         this.reloadCompile = reloadCompile;
         this.createClassLoader = createClassLoader;
@@ -448,8 +415,14 @@ public class Reloader implements BuildLink
         this.playWatchService = playWatchService;
 
         watchState = WatchState.empty();
-        watcher = playWatchService.watch( monitoredFiles, new PlayWatchCallback() { public void onChange(){changed = true;}} );
-        classLoaderVersion = new AtomicInteger(0);
+        watcher = playWatchService.watch( monitoredFiles, new PlayWatchCallback()
+        {
+            public void onChange()
+            {
+                changed = true;
+            }
+        } );
+        classLoaderVersion = new AtomicInteger( 0 );
     }
 //    // The current classloader for the application
 //    @volatile private var currentApplicationClassLoader: Option[ClassLoader] = None
@@ -495,7 +468,7 @@ public class Reloader implements BuildLink
     {
         Object result = null;
 //        if (changed || forceReloadNextTime || currentSourceMap.isEmpty || currentApplicationClassLoader.isEmpty) {
-        if (changed || forceReloadNextTime || currentSourceMap == null || currentApplicationClassLoader == null)
+        if ( changed || forceReloadNextTime || currentSourceMap == null || currentApplicationClassLoader == null )
         {
 //            val shouldReload = forceReloadNextTime
             boolean shouldReload = forceReloadNextTime;
@@ -509,9 +482,9 @@ public class Reloader implements BuildLink
 //            reloadCompile() match {
             CompileResult compileResult = reloadCompile.apply();
 //            case CompileFailure(exception) =>
-            if (compileResult instanceof CompileFailure)
+            if ( compileResult instanceof CompileFailure )
             {
-                CompileFailure compileFailure = (CompileFailure)compileResult;
+                CompileFailure compileFailure = (CompileFailure) compileResult;
 
 //              // We force reload next time because compilation failed this time
 //              forceReloadNextTime = true
@@ -520,9 +493,9 @@ public class Reloader implements BuildLink
                 result = compileFailure.exception;
             }
 //            case CompileSuccess(sourceMap, classpath) =>
-            else if (compileResult instanceof CompileSuccess)
+            else if ( compileResult instanceof CompileSuccess )
             {
-                CompileSuccess compileSuccess = (CompileSuccess)compileResult;
+                CompileSuccess compileSuccess = (CompileSuccess) compileResult;
 
 //                currentSourceMap = Some(sourceMap)
                 currentSourceMap = compileSuccess.sources;
@@ -532,7 +505,7 @@ public class Reloader implements BuildLink
                 // Use the SBT watch service, passing true as the termination to force it to break after one check
 //                val (_, newState) = SourceModificationWatch.watch(PathFinder.strict(classpath).***, 0, watchState)(true)
 //                SourceModificationWatch.WatchResult watchresult = SourceModificationWatch.watch(/*??,*/ 0, watchState);
-                WatchState newState = SourceModificationWatch.watch(/*??,*/ 0, watchState);
+                WatchState newState = SourceModificationWatch.watch( /* ??, */0, watchState );
                 // SBT has a quiet wait period, if that's set to true, sources were modified
 //                val triggered = newState.awaitingQuietPeriod
                 boolean triggered = newState.awaitingQuietPeriod();
@@ -540,21 +513,22 @@ public class Reloader implements BuildLink
                 watchState = newState;
 
 //                if (triggered || shouldReload || currentApplicationClassLoader.isEmpty) {
-                if (triggered || shouldReload || currentApplicationClassLoader == null) {
-                  // Create a new classloader
-//                  val version = classLoaderVersion.incrementAndGet
-                  int version = classLoaderVersion.incrementAndGet();
-//                  val name = "ReloadableClassLoader(v" + version + ")"
-                  String name = "ReloadableClassLoader(v" + version + ")";
-//                  val urls = Reloader.urls(classpath)
-                  URL[] urls = Reloader.urls(compileSuccess.classpath);
-//                  val loader = createClassLoader(name, urls, baseLoader)
-//                  currentApplicationClassLoader = Some(loader)
-                  currentApplicationClassLoader = createClassLoader.apply(name, urls, baseLoader);
-//                  loader
+                if ( triggered || shouldReload || currentApplicationClassLoader == null )
+                {
+                    // Create a new classloader
+//                    val version = classLoaderVersion.incrementAndGet
+                    int version = classLoaderVersion.incrementAndGet();
+//                    val name = "ReloadableClassLoader(v" + version + ")"
+                    String name = "ReloadableClassLoader(v" + version + ")";
+//                    val urls = Reloader.urls(classpath)
+                    URL[] urls = Reloader.urls( compileSuccess.classpath );
+//                    val loader = createClassLoader(name, urls, baseLoader)
+//                    currentApplicationClassLoader = Some(loader)
+                    currentApplicationClassLoader = createClassLoader.apply( name, urls, baseLoader );
+//                    loader
                   result = currentApplicationClassLoader;
 //                } else {
-//                  null // null means nothing changed
+//                    null // null means nothing changed
                 }
             }
         }
@@ -568,8 +542,8 @@ public class Reloader implements BuildLink
     @Override /* BuildLink interface */
     public Map<String, String> settings()
     {
-        Map<String, String> result = new HashMap<String, String>(devSettings.size());
-        for (DevSetting devSetting: devSettings)
+        Map<String, String> result = new HashMap<String, String>( devSettings.size() );
+        for ( DevSetting devSetting : devSettings )
         {
             result.put( devSetting.key, devSetting.value );
         }
@@ -594,21 +568,21 @@ public class Reloader implements BuildLink
 //        }.orNull
 //    }
     @Override /* BuildLink interface */
-    public Object[] findSource(String className, Integer line)
+    public Object[] findSource( String className, Integer line )
     {
         Object[] result = null;
-        String topType = className.split("$")[0];
-        if (currentSourceMap != null)
+        String topType = className.split( "$" )[0];
+        if ( currentSourceMap != null )
         {
             Source source = currentSourceMap.get( topType );
-            result = new Object[]{source.file/*FIXME*/, line};
+            result = new Object[] { source.file/* FIXME */, line };
         }
         return result;
     }
 
 //    def runTask(task: String): AnyRef = runSbtTask(task)
     @Override /* BuildLink interface */
-    public Object runTask(String task)
+    public Object runTask( String task )
     {
         return null; // NOT USED
     }
@@ -624,7 +598,7 @@ public class Reloader implements BuildLink
 //        currentSourceMap = None
 //        watcher.stop()
 //    }
-    private void close()
+    void close()
     {
         currentApplicationClassLoader = null;
         currentSourceMap = null;
@@ -636,4 +610,5 @@ public class Reloader implements BuildLink
     {
         return currentApplicationClassLoader;
     }
+
 }

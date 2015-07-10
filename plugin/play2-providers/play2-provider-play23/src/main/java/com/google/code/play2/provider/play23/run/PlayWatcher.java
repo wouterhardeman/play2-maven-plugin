@@ -6,4 +6,5 @@ public interface PlayWatcher
      * Stop watching the files.
      */
     void stop();
+
 }

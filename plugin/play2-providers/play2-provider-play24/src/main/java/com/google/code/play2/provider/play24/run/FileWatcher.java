@@ -6,4 +6,5 @@ public interface FileWatcher
      * Stop watching the files.
      */
     void stop();
+
 }

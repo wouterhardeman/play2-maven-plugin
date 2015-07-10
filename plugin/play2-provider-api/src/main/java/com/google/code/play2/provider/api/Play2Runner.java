@@ -25,7 +25,8 @@ public interface Play2Runner
     String getProdServerMainClass();
 
     String getDevServerMainClass();
-    
-    void runInDevMode(File baseDirectory, BuildLink buildLink, List<File> dependencyClasspath, List<File> docsClasspath ) throws Throwable;
+
+    void runInDevMode( File baseDirectory, BuildLink buildLink, List<File> dependencyClasspath, List<File> docsClasspath )
+        throws Throwable;
 
 }
