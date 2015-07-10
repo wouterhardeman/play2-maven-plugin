@@ -17,15 +17,31 @@
 
 package com.google.code.play2.provider.play22;
 
+import java.io.File;
+import java.util.List;
+
+import com.google.code.play2.provider.api.BuildLink;
 import com.google.code.play2.provider.api.Play2Runner;
 
 public class Play22Runner
     implements Play2Runner
 {
     @Override
-    public String getServerMainClass()
+    public String getProdServerMainClass()
     {
         return "play.core.server.NettyServer";
+    }
+
+    @Override
+    public String getDevServerMainClass()
+    {
+        return getProdServerMainClass();
+    }
+
+    @Override
+    public void runInDevMode(File baseDirectory, BuildLink buildLink, List<File> dependencyClasspath, List<File> docsClasspath) throws Throwable
+    {
+        //TODO - implement
     }
 
 }

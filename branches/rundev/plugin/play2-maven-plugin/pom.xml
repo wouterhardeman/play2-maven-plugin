@@ -22,7 +22,7 @@ under the License.
     <parent>
         <groupId>com.google.code.play2-maven-plugin</groupId>
         <artifactId>play2</artifactId>
-        <version>1.0.0-beta4-SNAPSHOT</version>
+        <version>1.0.0-beta4-rundev-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -41,7 +41,7 @@ under the License.
         <maven.version>2.2.1</maven.version>
         <maven-plugin-plugin.version>3.4</maven-plugin-plugin.version>
         <plexus-archiver.version>3.0</plexus-archiver.version>
-        <sbt-compiler.plugin.version>1.0.0-beta5</sbt-compiler.plugin.version>
+        <sbt-compiler.plugin.version>1.0.0-beta6-SNAPSHOT</sbt-compiler.plugin.version>
     </properties>
 
     <dependencies>

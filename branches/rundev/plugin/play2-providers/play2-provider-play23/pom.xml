@@ -22,7 +22,7 @@ under the License.
     <parent>
         <groupId>com.google.code.play2-maven-plugin</groupId>
         <artifactId>play2-providers</artifactId>
-        <version>1.0.0-beta4-SNAPSHOT</version>
+        <version>1.0.0-beta4-rundev-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -82,7 +82,6 @@ under the License.
             <version>${twirl.version}</version>
         </dependency>
 
-        <!-- contains PropertiesEnhancer -->
         <dependency>
             <groupId>com.typesafe.play</groupId>
             <artifactId>build-link</artifactId>

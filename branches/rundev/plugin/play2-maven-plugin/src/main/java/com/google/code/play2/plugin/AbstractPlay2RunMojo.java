@@ -89,7 +89,7 @@ public abstract class AbstractPlay2RunMojo
         Play2Provider play2Provider = getProvider();
         Play2Runner play2Runner = play2Provider.getRunner();
 
-        Java javaTask = prepareAntJavaTask( play2Runner.getServerMainClass(), runFork );
+        Java javaTask = prepareAntJavaTask( play2Runner.getDevServerMainClass(), runFork );
         javaTask.setFailonerror( true );
         PidFileDeleter.getInstance().add( pidFile );
 
