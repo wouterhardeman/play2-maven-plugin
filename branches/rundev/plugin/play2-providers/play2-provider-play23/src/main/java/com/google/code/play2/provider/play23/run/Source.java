@@ -5,11 +5,13 @@ import java.io.File;
 public class Source
 {
     File file;
+
     private File original;
 
-    public Source(File file, File original)
+    public Source( File file, File original )
     {
         this.file = file;
         this.original = original;
     }
+
 }

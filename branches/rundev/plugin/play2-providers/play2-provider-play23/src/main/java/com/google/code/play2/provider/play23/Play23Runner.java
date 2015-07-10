@@ -55,32 +55,27 @@ public class Play23Runner
     }
 
     @Override
-    public void runInDevMode(File baseDirectory, BuildLink buildLink, List<File> dependencyClasspath, List<File> docsClasspath) throws Throwable
+    public void runInDevMode( File baseDirectory, BuildLink buildLink, List<File> dependencyClasspath,
+                              List<File> docsClasspath )
+        throws Throwable
     {
-        //com.google.code.play2.provider.play23.run.Play23DevModeRunner.run( dependencyClasspath );
+//        List<RunHook> runHooks = Collections.<RunHook> emptyList();
+        List<String> javaOptions = Collections.<String> emptyList();
+        ClassLoaderCreator dependencyClassLoader = new NamedURLClassLoaderCreator();
+        ReloadCompile reloadCompile = new ReloadCompileImpl( buildLink );
+        ClassLoaderCreator reloaderClassLoader = new DelegatedResourcesClassLoaderCreator();
 
-        //ClassLoader debugLoader = Play23DevModeRunner.class.getClassLoader();
-        //System.out.println("debugLoader:"+debugLoader);
-        
-//        Seq<RunHook> runHooks = JavaConversions.asScalaBuffer( Collections.<RunHook>emptyList() );
-        List<String> javaOptions = Collections.<String>emptyList();
-//        Seq<File> dependencyClasspathSeq = JavaConversions.asScalaBuffer( dependencyClasspath );
-        /*Function3<String, URL[], ClassLoader, ClassLoader>*/ClassLoaderCreator dependencyClassLoader = new NamedURLClassLoaderCreator();
-        /*Function0<Reloader.CompileResult>*/ReloadCompile reloadCompile = new ReloadCompileImpl(buildLink);
-        /*Function3<String, URL[], ClassLoader, ClassLoader>*/ClassLoaderCreator reloaderClassLoader = new DelegatedResourcesClassLoaderCreator();
+        List<Asset> allAssets = new ArrayList<Asset>( 1 );
+        allAssets.add( new Asset( "public/", new File( baseDirectory, "public" ) ) ); // file should be new File( baseDirectory, "target/web/public/main" )
+        AssetsClassLoaderCreatorImpl assetsClassLoader = new AssetsClassLoaderCreatorImpl( allAssets );
 
-        List/*<Tuple2<String, File>>*/<Asset> allAssets = new ArrayList/*<Tuple2<String, File>>*/<Asset>(1);
-        allAssets.add( new /*Tuple2<String, File>*/Asset("public/", new File(baseDirectory, "public")) ); // file should be new File("target/web/public/main")
-        AssetsClassLoaderCreatorImpl/*Function1<ClassLoader, ClassLoader>*/ assetsClassLoader = new AssetsClassLoaderCreatorImpl( allAssets/*JavaConversions.asScalaBuffer( allAssets )*/ );
+        ClassLoader commonClassLoader = Reloader.commonClassLoader( dependencyClasspath );
 
-        ClassLoader commonClassLoader = Reloader.commonClassLoader(dependencyClasspath);
-
-        List<File> monitoredFiles = new ArrayList<File>(4);
-        monitoredFiles.add(new File(baseDirectory, "app"));
-        monitoredFiles.add(new File(baseDirectory, "conf"));
-        monitoredFiles.add(new File(baseDirectory, "app/assets"));
-        monitoredFiles.add(new File(baseDirectory, "public"));
-//        Seq<String> monitoredFilesSeq = JavaConversions.asScalaBuffer( monitoredFiles/*Collections.<String>emptyList()*/ );
+        List<File> monitoredFiles = new ArrayList<File>( 4 );
+        monitoredFiles.add( new File( baseDirectory, "app" ) );
+        monitoredFiles.add( new File( baseDirectory, "conf" ) );
+        monitoredFiles.add( new File( baseDirectory, "app/assets" ) );
+        monitoredFiles.add( new File( baseDirectory, "public" ) );
 
 //        LoggerProxy loggerProxy = new LoggerProxyImpl();
         PlayWatchService playWatchService = new DummyPlayWatchService();//PlayWatchService$.MODULE$._mthdefault("target.value", 500 /* SBT 0.13.8 Defaults.scala L.147 */, lp/*new LoggerProxyImpl()*//*sLog.value -  LoggerProxy*/);
@@ -88,36 +83,18 @@ public class Play23Runner
         //PlayWatchService playWatchService = PlayWatchService$.MODULE$.default(new File("target")/*FIXME*//*targetDirectory: File*/, 1000/*FIXME*//*pollDelayMillis: Int*/, lp/*logger: LoggerProxy*/);
 //        PlayWatchService playWatchService = PlayWatchService$.MODULE$.jdk7(loggerProxy);
 
-//        Seq<File> docsClasspathSeq = JavaConversions.asScalaBuffer( docsClasspath );
         int defaultHttpPort = 9000;
-        List<DevSetting> devSettings = Collections.<DevSetting>emptyList();
-//        Seq<Tuple2<String, String>> devSettings = JavaConversions.asScalaBuffer( Collections.<Tuple2<String, String>>emptyList() );
-        List<String> args = Collections.<String>emptyList();
-//        Seq<String> args = JavaConversions.asScalaBuffer( Collections.<String>emptyList() );
+        List<DevSetting> devSettings = Collections.<DevSetting> emptyList();
+        List<String> args = Collections.<String> emptyList();
 //        Function1<String, Object> runSbtTask = new RunSbtTask(); /* String => AnyRef */
 
-        Reloader.startDevMode( /*runHooks, */javaOptions, dependencyClasspath/*Seq*/, dependencyClassLoader,
-                                        reloadCompile, reloaderClassLoader, assetsClassLoader, commonClassLoader,
-                                        monitoredFiles/*Seq*/, playWatchService, docsClasspath/*Seq*/, defaultHttpPort, baseDirectory,
-                                        devSettings, args/*, runSbtTask*/ );
+        Reloader.startDevMode( /* runHooks,*/ javaOptions, dependencyClasspath, dependencyClassLoader, reloadCompile,
+                               reloaderClassLoader, assetsClassLoader, commonClassLoader, monitoredFiles,
+                               playWatchService, docsClasspath, defaultHttpPort, baseDirectory, devSettings, args /*, runSbtTask */);
         while ( true )
         {
             Thread.sleep( 1000L );
         }
     }
-
-    /*private static ClassLoader getCommonClassLoader( List<File> dependencyClasspath ) throws java.net.MalformedURLException
-    {
-        List<URL> commonClasspath = new ArrayList<URL>(1);
-        for ( File depFile: dependencyClasspath )
-        {
-            String name = depFile.getName();
-            if ( name.startsWith( "h2-" ) || name == "h2.jar" )
-            {
-                commonClasspath.add( depFile.toURI().toURL() );
-            }
-        }
-        return new URLClassLoader( commonClasspath.toArray( new URL[commonClasspath.size()] ), null /* important here, don't depend of the sbt classLoader! *//* );
-    }*/
 
 }

@@ -8,9 +8,10 @@ public class Asset
 
     File dir;
 
-    public Asset(String prefix, File dir)
+    public Asset( String prefix, File dir )
     {
         this.prefix = prefix;
         this.dir = dir;
     }
+
 }

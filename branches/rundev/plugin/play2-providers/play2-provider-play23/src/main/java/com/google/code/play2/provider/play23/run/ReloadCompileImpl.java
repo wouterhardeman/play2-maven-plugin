@@ -15,16 +15,20 @@ import com.google.code.play2.provider.api.BuildLink;
       () => Project.runTask(streamsManager in scope, state).map(_._2).get.toEither.right.toOption
     )
  */
-public class ReloadCompileImpl implements ReloadCompile {
+public class ReloadCompileImpl
+    implements ReloadCompile
+{
 
-    private static class SourceMapImpl extends HashMap<String, Source> implements SourceMap
+    private static class SourceMapImpl
+        extends HashMap<String, Source>
+        implements SourceMap
     {
     }
 
     private BuildLink buildLink;
 
     /* TEST */
-    public ReloadCompileImpl(BuildLink buildLink)
+    public ReloadCompileImpl( BuildLink buildLink )
     {
         this.buildLink = buildLink;
     }
@@ -33,17 +37,17 @@ public class ReloadCompileImpl implements ReloadCompile {
     {
         SourceMap sources = new SourceMapImpl();
         Map<String, File> x = buildLink.x();
-        for (Map.Entry<String, File> entry: x.entrySet())
+        for ( Map.Entry<String, File> entry : x.entrySet() )
         {
             String name = entry.getKey();
             File sourceFile = entry.getValue();
-            sources.put(name, new Source( sourceFile, null/*scala.Option.<File>empty()*/));
+            sources.put( name, new Source( sourceFile, null/* scala.Option.<File>empty() */) );
         }
 
-        List<File> classpath = new ArrayList<File>(1);
-        classpath.add(new File("target/classes"));
+        List<File> classpath = new ArrayList<File>( 1 );
+        classpath.add( new File( "target/classes" ) ); // TODO-change to absolute path
 
-        CompileResult result = new CompileSuccess(sources, classpath);
+        CompileResult result = new CompileSuccess( sources, classpath );
         return result;
     }
     
@@ -53,4 +57,5 @@ public class ReloadCompileImpl implements ReloadCompile {
 //    {
 //        
 //    }
+
 }

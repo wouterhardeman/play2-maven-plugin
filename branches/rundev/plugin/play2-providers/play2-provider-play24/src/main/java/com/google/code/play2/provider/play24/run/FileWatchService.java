@@ -12,5 +12,6 @@ public interface FileWatchService
      * @param onChange A callback that is executed whenever something changes.
      * @return A watcher
      */
-    FileWatcher watch(List<File> filesToWatch, FileWatchCallback onChange);
+    FileWatcher watch( List<File> filesToWatch, FileWatchCallback onChange );
+
 }

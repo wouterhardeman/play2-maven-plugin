@@ -10,7 +10,8 @@ import play.core.BuildLink;
 //    trait PlayDevServer extends Closeable {
 //      val buildLink: BuildLink
 //    }
-    interface PlayDevServer extends Closeable
-    {
-        BuildLink buildLink();
-    }
+interface PlayDevServer
+    extends Closeable
+{
+    BuildLink buildLink();
+}

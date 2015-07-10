@@ -3,18 +3,20 @@ package com.google.code.play2.provider.play24.run;
 import java.net.URL;
 import java.net.URLClassLoader;
 
-class NamedURLClassLoader extends URLClassLoader
+class NamedURLClassLoader
+    extends URLClassLoader
 {
     private final String name;
+
     private final URL[] urls; // for toString() only
-    
-    public NamedURLClassLoader(String name, URL urls[], ClassLoader parent)
+
+    public NamedURLClassLoader( String name, URL urls[], ClassLoader parent )
     {
-        super(urls, parent);
+        super( urls, parent );
         this.name = name;
         this.urls = urls; // for toString() only
     }
-    
+
     public String toString()
     {
         StringBuilder sb = new StringBuilder();
@@ -27,4 +29,5 @@ class NamedURLClassLoader extends URLClassLoader
         return sb.toString();
         // return name + "{" + getURLs.map(_.toString).mkString(", ") + "}"
     }
+
 }

@@ -1,6 +1,7 @@
 package com.google.code.play2.provider.play24.run;
 
-public class LoggerProxyImpl implements LoggerProxy
+public class LoggerProxyImpl
+    implements LoggerProxy
 {
     @Override
     public void verbose( String msg )
@@ -45,4 +46,5 @@ public class LoggerProxyImpl implements LoggerProxy
     {
         System.out.println( "success: " + msg );
     }
+
 }
