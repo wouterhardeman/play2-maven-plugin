@@ -66,7 +66,8 @@ public class Play23Runner
         ClassLoaderCreator reloaderClassLoader = new DelegatedResourcesClassLoaderCreator();
 
         List<Asset> allAssets = new ArrayList<Asset>( 1 );
-        allAssets.add( new Asset( "public/", new File( baseDirectory, "public" ) ) ); // file should be new File( baseDirectory, "target/web/public/main" )
+        //TEST allAssets.add( new Asset( "public/", new File( baseDirectory, "public" ) ) ); // file should be new File( baseDirectory, "target/web/public/main" )
+        allAssets.add( new Asset( "public/", new File( baseDirectory, "target/classes/public" ) ) ); // file should be new File( baseDirectory, "target/web/public/main" )
         AssetsClassLoaderCreatorImpl assetsClassLoader = new AssetsClassLoaderCreatorImpl( allAssets );
 
         ClassLoader commonClassLoader = Reloader.commonClassLoader( dependencyClasspath );
