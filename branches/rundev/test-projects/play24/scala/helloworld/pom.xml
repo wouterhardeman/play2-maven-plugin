@@ -90,10 +90,10 @@ under the License.
             <resource>
                 <directory>${basedir}/conf</directory>
             </resource>
-            <!--TEST <resource>
+            <resource>
                 <directory>${basedir}/public</directory>
                 <targetPath>public</targetPath>
-            </resource> -->
+            </resource>
         </resources>
 
         <plugins>
